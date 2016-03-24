@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "socket.io": "latest",
-    "express": "latest"
+    "express": "^4.13.4",
+    "jquery": "^2.2.2",
+    "socketio": "^1.0.0"
   }
 }
