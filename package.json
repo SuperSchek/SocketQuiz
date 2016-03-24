@@ -1,0 +1,9 @@
+{
+  "name": "SocketQuiz",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "socket.io": "latest",
+    "express": "latest"
+  }
+}
