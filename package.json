@@ -1,5 +1,5 @@
 {
-  "name": "Socket Quiz",
+  "name": "Socket-Quiz",
   "version": "1.4.5",
   "description": "node.js realtime framework server",
   "keywords": [
@@ -22,6 +22,7 @@
     "start": "node app/index.js"
   },
   "dependencies": {
+    "express": "3.4.8",
     "engine.io": "1.6.8",
     "socket.io-parser": "2.2.6",
     "socket.io-client": "1.4.5",
