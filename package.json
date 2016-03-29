@@ -19,7 +19,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/gulp test",
-    "start": "node app/index.js"
+    "start": "node app/index.js",
+    "server": "PORT=2222 node app/index.js"
   },
   "dependencies": {
     "express": "3.4.8",
