@@ -1,7 +1,0 @@
-# Node dependecies.
-node_modules
-
-# WebStorm files.
-.idea/
-
-npm-debug.log
