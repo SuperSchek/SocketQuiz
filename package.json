@@ -11,7 +11,7 @@
     "socket",
     "io"
   ],
-  "main": "./libang//index",
+  "main": "./lib/index",
   "license": "MIT",
   "repository": {
     "type": "git",
