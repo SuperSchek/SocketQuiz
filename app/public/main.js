@@ -74,6 +74,24 @@ var currentInput = usernameInput.focus();
 
 var socket = io();
 
+var roomsAmount = 0;
+
+var rooms = [];
+
+function generateRoomCode() {
+    roomsAmount++;
+    rooms.push(roomsAmount);
+    roomSession(roomsAmount);
+}
+
+function roomSession(roomNumber) {
+    console.log('Room session started in room' + roomNumber + '!');
+}
+
+function endSession(roomNumber) {
+    rooms.splice(roomNumber);
+}
+
 function makeRoom() {
   console.log('Ik wil een nieuwe quiz starten!');
   socket.emit('start quiz');
