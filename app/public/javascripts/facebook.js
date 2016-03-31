@@ -12,15 +12,15 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             console.log('Logged in.');
-            document.getElementById('status').innerHTML = 'We are connected!';
+            //document.getElementById('status').innerHTML = 'We are connected!';
         }
         else if (response.status === 'not_authorized') {
             // FB.login();
             console.log('Logged in, not connected.');
-            document.getElementById('status').innerHTML = 'We are not connected. =(';
+            //document.getElementById('status').innerHTML = 'We are not connected. =(';
         } else {
             console.log('Not logged in.');
-            document.getElementById('status').innerHTML = 'We are not logged in to Facebook. =(';
+            //document.getElementById('status').innerHTML = 'We are not logged in to Facebook. =(';
         }
     });
 };
@@ -49,17 +49,17 @@ function login() {
             });
         } else if (response.status === 'not_authorized') {
             console.log('Logged in, not connected.');
-            document.getElementById('status').innerHTML = 'We are not connected. =(';
+            //document.getElementById('status').innerHTML = 'We are not connected. =(';
         } else {
             console.log('Not logged in.');
-            document.getElementById('status').innerHTML = 'We are not logged in to Facebook. =(';
+            //document.getElementById('status').innerHTML = 'We are not logged in to Facebook. =(';
         }
     });
 }
 
 function getInfo() {
     FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
-        document.getElementById('status').innerHTML = 'Je bent via Facebook ingelogd als ' + response.name;
+        //document.getElementById('status').innerHTML = 'Je bent via Facebook ingelogd als ' + response.name;
         console.log(response.name);
         return loggedInWithFb = response.name;
     });

@@ -74,6 +74,16 @@ var currentInput = usernameInput.focus();
 
 var socket = io();
 
+function makeRoom() {
+  console.log('Ik wil een nieuwe quiz starten!');
+  socket.emit('start quiz');
+}
+
+socket.on('quiz started', function () {
+  document.getElementById('leaderboard').style.cssText = "display:none;";
+});
+
+/*
 function addParticipantsMessage (data) {
   var message = '';
   if (data.numUsers === 1) {
@@ -316,6 +326,8 @@ socket.on('typing', function (data) {
 socket.on('stop typing', function (data) {
   removeChatTyping(data);
 });
+
+*/
 
 // $(function() {
 //   var FADE_TIME = 150; // ms

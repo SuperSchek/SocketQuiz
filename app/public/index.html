@@ -40,13 +40,13 @@
         <div id="position-cont"><div id="position">1e</div></div>
       </div>
 
-      <script src="progressbar.min.js"></script>
-      <script src="script.js"></script>
     </div>
 
     <div id="desktop-cont" style="display:none;">
       <!--Room
       <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
+
+      <button onclick="makeRoom()">Start Quiz!</button>
 
       <!--Leaderboard-->
       <div id="leaderboard-cont">
@@ -71,8 +71,16 @@
       <div id="time-cont">
         <div class="progress" id="progress"></div>
       </div>
+
+      <script src="main.js"></script>
+
     </div>
-    <script src="script.js"></script>
-    <script src="main.js"></script>
+
+    <script>
+      function testings() {
+        document.getElementById('leaderboard').style.cssText = "display: none;";
+      }
+    </script>
+
   </body>
 </html>
