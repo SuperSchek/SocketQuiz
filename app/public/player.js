@@ -25,13 +25,13 @@ var question1 = {
         punten: true
     }],
     picture: "<img src='dikkeBMW.jpg' alt='bmw' />"
-}
+};
 
 
-var questions = [question1]
+var questions = [question1];
 
 
-var quastionNumber;
+var questionNumber;
 function getRandomQuestion() {
     var htmlStr = "";
     questionNumber = Math.floor((Math.random() * questions.length) + 1);
@@ -43,4 +43,15 @@ function getRandomQuestion() {
         htmlStr += "<div class='answer" + q + "'>" + questions[questionNumber].answers[q] + "</div>";
     }
     return htmlStr;
+}
+/**
+ * Mijn shit
+ */
+function renderVraag(vraag){
+    var stelVraag = document.getElementById("question");
+    stelVraag.innerHTML = vraag.question;
+}
+for(var i=0; i < questions.length; i++) {
+    renderVraag(questions[i]);
+    getRandomQuestion();
 }
