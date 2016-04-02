@@ -3,8 +3,8 @@
     <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
 
     <!--Leaderboard-->
-    <div id="leaderboard-cont">
-        <div id="leaderboard-title"><img src="images/crown.png" width="auto" height="40"/> Klassement</div>
+    <div style="margin-top: 50px;" id="leaderboard-cont">
+        <div id="leaderboard-title"><img src="../images/crown.png" width="auto" height="40"/>Klassement</div>
         <div id="leaderboard">
             <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
             <div class="leaderboard-card">Hector Salamanca<div class="leaderboard-card-score">20pnt</div></div>
@@ -15,17 +15,30 @@
     </div>
 
     <!--Vraag-->
-    <div id="question-cont"><div id="question">Waar vonden de dramatische Spelen van '72 plaats?</div></div>
+    <div id="question-cont"><div id="question" style="color: #FFF;">Waar vonden de dramatische Spelen van '72 plaats?</div></div>
     <div id="question-nr-cont"><div id="question-nr">vraag 1/21</div></div>
 
     <!--Images-->
     <div id="image-cont"><div id="image"><img src="images/test.jpg" width="100%"/></div></div>
 
     <!--Timebar-->
-    <div id="time-cont">
-        <div class="progress" id="progress"></div>
-    </div>
+    <div id="counter" style="height: 50px; width: 100%;"></div>
 
-    <script src="../main.js"></script>
-    <script src="../javascripts/progressbar.min.js"></script>
+    <script>
+        var line = new ProgressBar.Line('#counter', {
+            color: '#f6325a',
+            duration: 20000,
+            text: {
+                value: 20
+            },
+            step: function(state, bar) {
+                var nummer = Math.abs(((20 * bar.value())-20).toFixed(0));
+                bar.setText( nummer + " seconden");
+                if (bar.value() == 1){
+                    bar.setText("De tijd is om!")
+                }
+            }
+        });
+        line.animate(1);
+    </script>
 </div>
