@@ -1,10 +1,7 @@
-<!doctype html>
-<html lang="en" ng-app>
+<!DOCTYPE html>
+<html ng-app="socket-quiz">
   <head>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="javascripts/progressbar.min.js"></script>
-    <script src="javascripts/facebook.js"></script>
+    <title>SocketQuiz</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
@@ -12,75 +9,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta charset="UTF-8">
 
-    <title>SocketQuiz</title>
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-    <div id="mobile-cont" style="display:none;">
-      <!--Timebar-->
-      <div id="time-mob-cont">
-        <div class="progress" id="progress-mob"></div>
-      </div>
+    <a ui-sref="desktop">Desktop</a>
+    <a ui-sref="mobile">Mobile</a>
 
-      <!--Vraag-->
-      <div id="question-mob-cont"><div id="question-mob">Waar vonden de dramatische Spelen van '72 plaats?</div></div>
-      <div id="question-nr-mob-cont"><div id="question-nr-mob">vraag 1/21</div></div>
+    <div ui-view></div>
 
-      <!--Antwoorden-->
-      <div id="answers-mob-cont">
-        <button class="btn-style">München</button>
-        <button class="btn-style">Amsterdam</button>
-        <button class="btn-style">Parijs</button>
-        <button class="btn-style">Berlijn</button>
-      </div>
 
-      <!--Status-->
-      <div id="status-mob-cont">
-        <div id="points-cont"><div id="points">Je hebt 20 punten</div></div><!--op de 20 moet een var komen-->
-        <div id="position-cont"><div id="position">1e</div></div>
-      </div>
-
-    </div>
-
-    <div id="desktop-cont" style="display:none;">
-      <!--Room
-      <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
-
-      <button onclick="makeRoom()">Start Quiz!</button>
-
-      <!--Leaderboard-->
-      <div id="leaderboard-cont">
-        <div id="leaderboard-title"><img src="images/crown.png" width="auto" height="40"/> Klassement</div>
-        <div id="leaderboard">
-          <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
-          <div class="leaderboard-card">Hector Salamanca<div class="leaderboard-card-score">20pnt</div></div>
-          <div class="leaderboard-card">Hank Schrader<div class="leaderboard-card-score">18pnt</div></div>
-          <div class="leaderboard-card">Ted Beneke<div class="leaderboard-card-score">16pnt</div></div>
-          <div class="leaderboard-card">Marie Schrader<div class="leaderboard-card-score">13pnt</div></div>
-        </div>
-      </div>
-
-      <!--Vraag-->
-      <div id="question-cont"><div id="question">Waar vonden de dramatische Spelen van '72 plaats?</div></div>
-      <div id="question-nr-cont"><div id="question-nr">vraag 1/21</div></div>
-
-      <!--Images-->
-      <div id="image-cont"><div id="image"><img src="images/test.jpg" width="100%"/></div></div>
-
-      <!--Timebar-->
-      <div id="time-cont">
-        <div class="progress" id="progress"></div>
-      </div>
-
-      <script src="main.js"></script>
-
-    </div>
-
-    <script>
-      function testings() {
-        document.getElementById('leaderboard').style.cssText = "display: none;";
-      }
-    </script>
-
+    <!-- Angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <!-- App Script -->
+    <script src="routes.js"></script>
   </body>
 </html>
