@@ -1,3 +1,30 @@
+<div class="row-fluid">
+    <!--Vraag Content-->
+    <div class="span8">
+        <ng-include
+            src="'questionContent.html'">
+        </ng-include>
+
+
+        <div ng-view>
+            <div ng-include="'questionContent.html'"></div>
+        </div>
+
+    </div>
+
+    <!--Leaderboards-->
+    <div class="span4">
+
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+
+    </div>
+</div>
+
+
 <div id="desktop-cont" style="background-color: white;">
     <!--Room
     <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
