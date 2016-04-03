@@ -1,70 +1,8 @@
-<div class="row-fluid">
-    <!--Vraag Content-->
-    <div class="span8">
-        <ng-include
-            src="'questionContent.html'">
-        </ng-include>
-
-
-        <div ng-view>
-            <div ng-include="'questionContent.html'"></div>
-        </div>
-
-    </div>
-
-    <!--Leaderboards-->
-    <div class="span4">
-
-    </div>
-</div>
+<!-- Load Angular desktopController-->
+<script src="../controllers/desktopController.js"></script>
 
 <div class="row-fluid">
     <div class="span12">
-
+        <ng-include src="'partials/desktop/startScreen.html'"></ng-include>
     </div>
-</div>
-
-
-<div id="desktop-cont" style="background-color: white;">
-    <!--Room
-    <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
-
-    <!--Leaderboard-->
-    <div id="leaderboard-cont" style="height: 100%">
-        <div id="leaderboard-title"><img src="../images/crown.png" width="auto" height="40"/>Klassement</div>
-        <div id="leaderboard">
-            <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
-            <div class="leaderboard-card">Hector Salamanca<div class="leaderboard-card-score">20pnt</div></div>
-            <div class="leaderboard-card">Hank Schrader<div class="leaderboard-card-score">18pnt</div></div>
-            <div class="leaderboard-card">Ted Beneke<div class="leaderboard-card-score">16pnt</div></div>
-            <div class="leaderboard-card">Marie Schrader<div class="leaderboard-card-score">13pnt</div></div>
-        </div>
-    </div>
-
-    <!--Vraag-->
-    <div id="question-cont"><div id="question">Waar vonden de dramatische Spelen van '72 plaats?</div></div>
-    <div id="question-nr-cont"><div id="question-nr">vraag 1/21</div></div>
-
-    <!--Images-->
-    <div id="image-cont"><div id="image"><img src="images/test.jpg" width="100%"/></div></div>
-
-    <!--Timebar-->
-
-    <script>
-        var line = new ProgressBar.Line('#counter', {
-            color: '#f6325a',
-            duration: 20000,
-            text: {
-                value: 20
-            },
-            step: function(state, bar) {
-                var nummer = Math.abs(((20 * bar.value())-20).toFixed(0));
-                bar.setText( nummer + " seconden");
-                if (bar.value() == 1){
-                    bar.setText("De tijd is om!")
-                }
-            }
-        });
-        line.animate(1);
-    </script>
 </div>

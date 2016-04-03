@@ -8,6 +8,7 @@ var socketQuiz = angular.module('socket-quiz', ["ui.router"])
 socketQuiz.config(function($stateProvider, $urlRouterProvider){
 
     // For any unmatched url, send to either /mobile or /desktop
+    // depending on whether isMobile returns true or false.
     $urlRouterProvider.otherwise(function() {
         if (isMobile == true) {
             return "/mobile"
