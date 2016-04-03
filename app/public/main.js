@@ -1,14 +1,4 @@
 /**JACCO'S CODE START**/
-
-if (isMobile == true){
-  var mobile = document.getElementById('mobile-cont')
-  mobile.style.display = 'block';
-
-}else{
-  var desktop = document.getElementById('desktop-cont')
-  desktop.style.display = 'block';
-  document.body.style.cssText = 'background:#fff;';
-};
 //TIMER
 window.onload = function onLoad() {
   var lineMobile = new ProgressBar.Line('#progress-mob', {

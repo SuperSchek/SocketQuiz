@@ -2,7 +2,7 @@
 @font-face {font-family: "AT";src: url("/fonts/AmericanTypewriter.ttf") format("truetype");}
 @font-face {font-family: "AT-Bold";src: url("/fonts/AmericanTypewriter-Bold.ttf") format("truetype");}
 html {width:100%;height: 100%;overflow: hidden;}
-body{background:#F6325A;margin:0;font-family: "AT-Bold";max-height: 100%;max-width: 100%;height:100%;}
+body{margin:0;font-family: "AT-Bold";max-height: 100%;max-width: 100%;height:100%;}
 
 /*******  MOBILE CSS  *******/
 /*  timer  */
