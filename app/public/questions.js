@@ -66,12 +66,7 @@ function nextQuestion() {
 }
 
 function renderSockQes() {
-    var stelVraag = document.getElementById("question");
-    stelVraag.innerHTML = "Vraag via Sockets";
-
-    var stelVraagMobile = document.getElementById("question-mob");
-    stelVraagMobile.innerHTML = "Vraag via Sockets";
-
+    askQuestion();
 }
 
 function askQuestion() {
