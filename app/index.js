@@ -28,6 +28,11 @@ io.on('connection', function (socket) {
     });
   });
 
+  socket.on('next question', function() {
+    console.log('Send render command');
+    io.sockets.emit('render next');
+  });
+
   // when the client emits 'add user', this listens and executes
   socket.on('add user', function (username) {
     if (addedUser) return;

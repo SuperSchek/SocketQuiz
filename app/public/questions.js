@@ -2,6 +2,8 @@
  * Created by N76V on 31-3-2016.
  */
 
+var socket = io();
+
 var quiz = [{
     question: "EEN",
     questionNr:1,
@@ -58,6 +60,16 @@ var quiz = [{
     enabled:true
 }];
 
+function nextQuestion() {
+    socket.emit('next question');
+    console.log('next question emit');
+}
+
+function renderSockQes() {
+    var stelVraag = document.getElementById("question");
+    stelVraag.innerHTML = "Vraag via Sockets";
+}
+
 function askQuestion() {
     var numEnabled = 0;
     for (var i = 0; i < quiz.length; i++) {
@@ -93,5 +105,5 @@ function askQuestion() {
     quiz[randomNum].enabled = false;
 };
 askQuestion();
-document.getElementById("next-question-mob").onclick = askQuestion;
-document.getElementById("next-question").onclick = askQuestion;
+// document.getElementById("next-question-mob").onclick = askQuestion;
+// document.getElementById("next-question").onclick = nextQuestion();
