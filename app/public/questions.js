@@ -1,17 +1,21 @@
+/**
+ * Created by N76V on 31-3-2016.
+ */
+
 var quiz = [{
     question: "EEN",
     questionNr:1,
     answers: [{
-        answer1: "Klap die ding",
+        answer: "Klap die ding",
         punten: false
     },{
-        answer2: "Deze!",
+        answer: "Deze!",
         punten: false
     },{
-        answer3: "Weetnie man",
+        answer: "Weetnie man",
         punten: false
     },{
-        answer4: "diepe shit",
+        answer: "diepe shit",
         punten: true
     }],
     picture: "<img src='images/test.jpg' width='100%'/>",
@@ -20,16 +24,16 @@ var quiz = [{
     question: "TWEE",
     questionNr:2,
     answers: [{
-        answer1: "antw1",
+        answer: "antw1",
         punten: false
     },{
-        answer2: "antw2",
+        answer: "antw2",
         punten: false
     },{
-        answer3: "antw3",
+        answer: "antw3",
         punten: false
     },{
-        answer4: "antw4",
+        answer: "antw4",
         punten: true
     }],
     picture: "<img src='images/test.jpg' width='100%'/>",
@@ -38,16 +42,16 @@ var quiz = [{
     question: "DRIE",
     questionNr:3,
     answers: [{
-        answer1: "ANSWR1",
+        answer: "ANSWR1",
         punten: false
     },{
-        answer2: "ANSWR2",
+        answer: "ANSWR2",
         punten: false
     },{
-        answer3: "ANSWR3",
+        answer: "ANSWR3",
         punten: false
     },{
-        answer4: "ANSWR4",
+        answer: "ANSWR4",
         punten: true
     }],
     picture: "<img src='images/test.jpg' width='100%'/>",
@@ -61,9 +65,9 @@ function askQuestion() {
             numEnabled++;
         }
     }
-    // Ask all enabled questions in random order
+
     for (var j = 0; j < numEnabled; j++) {
-        // Find random question that hasn't been asked yet
+
         do {
             var randomNum = Math.floor(Math.random() * quiz.length);
 
@@ -78,17 +82,16 @@ function askQuestion() {
         image.innerHTML = quiz[randomNum].picture;
 
         var answer1 = document.getElementById("qstn1");
-        answer1.innerHTML = quiz[randomNum].answers[0].answer1;
+        answer1.innerHTML = quiz[randomNum].answers[0].answer;
         var answer2 = document.getElementById("qstn2");
-        answer2.innerHTML = quiz[randomNum].answers[1].answer2;
+        answer2.innerHTML = quiz[randomNum].answers[1].answer;
         var answer3 = document.getElementById("qstn3");
-        answer3.innerHTML = quiz[randomNum].answers[2].answer3;
+        answer3.innerHTML = quiz[randomNum].answers[2].answer;
         var answer4 = document.getElementById("qstn4");
-        answer4.innerHTML = quiz[randomNum].answers[3].answer4;
+        answer4.innerHTML = quiz[randomNum].answers[3].answer;
     }
     quiz[randomNum].enabled = false;
 };
-//de eerste keer uitvoeren:
 askQuestion();
-//hierna zelf klikken om een volgende vraag te renderen
+document.getElementById("next-question-mob").onclick = askQuestion;
 document.getElementById("next-question").onclick = askQuestion;
