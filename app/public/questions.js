@@ -101,5 +101,5 @@ function askQuestion() {
 }
 
 askQuestion();
-// document.getElementById("next-question-mob").onclick = askQuestion;
-// document.getElementById("next-question").onclick = nextQuestion();
+//document.getElementById("next-question-mob").onclick = askQuestion;
+document.getElementById("next-question").onclick = nextQuestion();

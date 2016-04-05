@@ -1,11 +1,12 @@
 var players = [{
+    host: true,
     id:1,
     name: "Lola Ferrari",
-    score: "60",
-    room: "4820"
+    score: 0
+
 },{
+    host: false,
     id:2,
-    name: "Lola Ferrari",
-    score: "60",
-    room: "4820"
+    name: "Ferrari",
+    score: 0
 }];
