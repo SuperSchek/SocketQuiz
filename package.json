@@ -49,20 +49,16 @@
   },
   "contributors": [
     {
-      "name": "Guillermo Rauch",
-      "email": "rauchg@gmail.com"
+      "name": "Sander Schekman",
+      "email": "aaschekman@icloud.com"
     },
     {
-      "name": "Arnout Kazemier",
-      "email": "info@3rd-eden.com"
+      "name": "Jacco Schumacher",
+      "email": "jaccoschumacher@gmail.com"
     },
     {
-      "name": "Vladimir Dronnikov",
-      "email": "dronnikov@gmail.com"
-    },
-    {
-      "name": "Einar Otto Stangvik",
-      "email": "einaros@gmail.com"
+      "name": "Nico Ender",
+      "email": "nicoender@gmail.com"
     }
   ]
 }

@@ -23,11 +23,11 @@ io.on('connection', function (socket) {
   socket.on('new message', function (data) {
     // we tell the client to execute 'new message'
     socket.broadcast.emit('new message', {
-      username: socket.username,
+      username: socket.usercname,
       message: data
     });
   });
-
+  
   socket.on('next question', function() {
     console.log('Send render command');
     io.sockets.emit('render next');

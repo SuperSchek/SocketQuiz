@@ -1,0 +1,50 @@
+<!--<div class="row-fluid">-->
+    <!--&lt;!&ndash;Vraag Content&ndash;&gt;-->
+    <!--<div class="span8">-->
+        <!--<ng-include src="'partials/desktop/questionContent.html'"></ng-include>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;Leaderboards&ndash;&gt;-->
+    <!--<div class="span4">-->
+        <!---->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row-fluid">-->
+    <!--<div class="span12">-->
+
+    <!--</div>-->
+<!--</div>-->
+
+<div id="desktop-cont" style="display:none;">
+    <!--Room
+    <div id="room-cont"><div id="room">socketquiz/room1</div></div>-->
+
+    <!--Leaderboard-->
+    <div id="leaderboard-cont">
+        <div id="leaderboard-title"><img src="images/crown.png" width="auto" height="40"/> Klassement</div>
+        <div id="leaderboard">
+            <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
+            <div class="leaderboard-card">Hector Salamanca<div class="leaderboard-card-score">20pnt</div></div>
+            <div class="leaderboard-card">Hank Schrader<div class="leaderboard-card-score">18pnt</div></div>
+            <div class="leaderboard-card">Ted Beneke<div class="leaderboard-card-score">16pnt</div></div>
+            <div class="leaderboard-card">Marie Schrader<div class="leaderboard-card-score">13pnt</div></div>
+        </div>
+    </div>
+
+    <!--Vraag-->
+    <div id="question-cont"><div id="question"></div></div>
+    <div id="question-nr-cont"><div id="question-nr">vraag 1/21 </div></div>
+    <button onclick="nextQuestion()" id="next-question">Volgende vraag</button>
+    <!--Images-->
+    <div id="image-cont"><div id="image"></div></div>
+
+    <!--Timebar-->
+    <div id="time-cont">
+        <div class="progress" id="progress"></div>
+    </div>
+</div>
+
+<script src="player.js"></script>
+<script src="questions.js"></script>
+<script src="main.js"></script>
