@@ -1,21 +1,17 @@
-/**
- * Created by N76V on 31-3-2016.
- */
-
 var quiz = [{
     question: "EEN",
     questionNr:1,
     answers: [{
-        answer: "Klap die ding",
+        answer: "München",
         punten: false
     },{
-        answer: "Deze!",
+        answer: "Amsterdamfsdfsdfsdfdsff",
         punten: false
     },{
-        answer: "Weetnie man",
+        answer: "Parijs",
         punten: false
     },{
-        answer: "diepe shit",
+        answer: "Berlijn",
         punten: true
     }],
     picture: "<img src='images/test.jpg' width='100%'/>",
@@ -67,10 +63,8 @@ function askQuestion() {
     }
 
     for (var j = 0; j < numEnabled; j++) {
-
         do {
             var randomNum = Math.floor(Math.random() * quiz.length);
-
         } while (quiz[randomNum].enabled == false);
 
         // Ask question
@@ -80,6 +74,9 @@ function askQuestion() {
         nummer.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
         var image = document.getElementById("image");
         image.innerHTML = quiz[randomNum].picture;
+
+        var nummerMob = document.getElementById("question-nr-mob");
+        nummerMob.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
 
         var answer1 = document.getElementById("qstn1");
         answer1.innerHTML = quiz[randomNum].answers[0].answer;
@@ -91,7 +88,8 @@ function askQuestion() {
         answer4.innerHTML = quiz[randomNum].answers[3].answer;
     }
     quiz[randomNum].enabled = false;
-};
+}
+
 askQuestion();
 document.getElementById("next-question-mob").onclick = askQuestion;
 document.getElementById("next-question").onclick = askQuestion;
