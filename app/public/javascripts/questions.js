@@ -15,7 +15,7 @@ var quiz = [{
         answer: "Berlijn",
         punten: true
     }],
-    picture: "<img src='images/test.jpg' width='100%'/>",
+    picture: "<img src='../images/test.jpg' width='100%'/>",
     enabled:true
 },{
     question: "TWEE",
@@ -33,7 +33,7 @@ var quiz = [{
         answer: "antw4",
         punten: true
     }],
-    picture: "<img src='images/test.jpg' width='100%'/>",
+    picture: "<img src='../images/test.jpg' width='100%'/>",
     enabled:true
 },{
     question: "DRIE",
@@ -51,7 +51,7 @@ var quiz = [{
         answer: "ANSWR4",
         punten: true
     }],
-    picture: "<img src='images/test.jpg' width='100%'/>",
+    picture: "<img src='../images/test.jpg' width='100%'/>",
     enabled:true
 }];
 

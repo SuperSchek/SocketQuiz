@@ -16,15 +16,32 @@
   </head>
 
   <body>
+    <div ng-controller="mainController">
+      <div ui-view></div>
+    </div>
 
-    <div ui-view></div>
+    <!--!!!!BELANGRIJK!!!!-->
+    <!--DE VOLGORDE WAAROP DE SCRIPTS GELADEN WORDEN IS BELANGRIJK-->
 
+    <!-- Socket.IO -->
+    <script src="socket.io/socket.io.js"></script>
     <!-- Angular -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
     <!-- UI-Router -->
     <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-    <!-- App Script -->
+    <!-- Angular Routes | Handles platform detection -->
     <script src="routes.js"></script>
+
+    <script type="application/javascript" src="javascripts/services.js"></script>
+
+    <script type="application/javascript" src="javascripts/controllers.js"></script>
+
+    <script type="application/javascript" src="javascripts/main.js"></script>
+
+    <script type="application/javascript" src="javascripts/player.js"></script>
+    <script type="application/javascript" src="javascripts/questions.js"></script>
+
+    <script type="application/javascript" src="javascripts/progressbar/progressbar.min.js"></script>
 
   </body>
 </html>
