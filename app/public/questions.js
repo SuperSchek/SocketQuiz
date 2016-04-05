@@ -1,3 +1,4 @@
+var socket = io();
 var quiz = [{
     question: "EEN",
     questionNr:1,
@@ -54,6 +55,15 @@ var quiz = [{
     enabled:true
 }];
 
+function nextQuestion() {
+    socket.emit('next question');
+    console.log('next question emit');
+}
+
+function renderSockQes() {
+    askQuestion();
+}
+
 function askQuestion() {
     var numEnabled = 0;
     for (var i = 0; i < quiz.length; i++) {
@@ -91,5 +101,5 @@ function askQuestion() {
 }
 
 askQuestion();
-document.getElementById("next-question-mob").onclick = askQuestion;
-document.getElementById("next-question").onclick = askQuestion;
+// document.getElementById("next-question-mob").onclick = askQuestion;
+// document.getElementById("next-question").onclick = nextQuestion();
