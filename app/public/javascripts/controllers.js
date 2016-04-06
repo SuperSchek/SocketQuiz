@@ -3,18 +3,19 @@
  */
 var app = angular.module('socket-quiz');
 
-app.controller('mainController', function($scope, socket) {
+app.controller('mainController', function($scope, $location, socket) {
     $scope.newCustomers = [];
     $scope.currentCustomer = {};
 
+    $scope.setRoute = function ( route) {
+        $location.path(route);
+    };
 
 });
-/*
+
 var lobby = angular.module('lobby');
 
-lobby.config(function ($routeProvider) {
+lobby.config('$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/lobby', {templateUrl: 'partials/desktop/lobby.html'})
-        .otherwise({redirectTo: '/desktop'});
-});*/
-
+        .when('/desktop/lobby', {templateUrl: 'partials/desktop/lobby.html'})
+});

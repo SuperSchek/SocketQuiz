@@ -5,13 +5,13 @@
     </div>
 </div>-->
 
-<div id="startScreen">
+<div id="startScreen" ng-app="lobby">
     <div id="welkom">
         <h1>Welkom bij SocketQuiz!</h1>
         <h3>Gemaakt als onderdeel van Scripting 4 Designers</h3>
     </div>
     <div id="btn-start">
-        <button class="btn-welkom">Start Quiz!</button>
+        <button ng-click="setRoute('/desktop/lobby')" class="btn-welkom">Start Quiz!</button>
     </div>
 
     <div id="namen">
