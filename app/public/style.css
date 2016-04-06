@@ -60,7 +60,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 
 /******** DESKTOP STYLES ********/
 #startScreen {background-color: #F6325A;color: #FFF;text-align: center;padding: 25px;position: absolute;width: 100%;height: 100%;}
-#startScreen button {margin-top: 25px;}
+#startScreen button {margin-top: 25px; transition: ease-in-out 0.2s}
 #startScreen button:hover {background: #fff;color: #F6325A;}
 
 h1{font-family: "AT-Bold", sans-serif;color:#fff; font-size: 72px;padding:0 0 2% 0;line-height: 72px;}
