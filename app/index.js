@@ -12,10 +12,6 @@ server.listen(port, function () {
 // Routing
 app.use(express.static(__dirname + '/public'));
 
-// Chatroom
-
-var numUsers = 0;
-
 io.on('connection', function(socket) {
 
   console.log('A client connected');
