@@ -2,37 +2,28 @@
 @font-face {font-family: "AT";src: url("fonts/AmericanTypewriter.ttf") format("truetype");}
 @font-face {font-family: "AT-Bold";src: url("fonts/AmericanTypewriter-Bold.ttf") format("truetype");}
 html {width:100%;height: 100%;overflow: hidden;}
-body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-height: 100%;max-width: 100%;height:100%;}
-h1{font-family: "AT-Bold";color:#fff; font-size: 72px;padding:0 0 2% 0;}
-h5{color:#313131;font-size:16px;}
-#welkom{float:left;position: relative;margin:2% 0 0 2%;text-align: left;}
-#namen{position:fixed;bottom:0;margin:0 2% 1%    2%;right:0;}
-.btn-welkom{width:20%;height:10%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
-#btn-start{position:relative;float:left;width:100%; height: auto;height: auto;margin:0 0 0 2%;}
+body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-height: 100%;max-width: 100%;height:100%;width:100%;}
 
 /*******  MOBILE CSS  *******/
-#mobile-cont{width:auto;height:100%;}
+#mobile-cont{width:100%;height:100%;}
 /*  timer  */
 #time-mob-cont{width:100%;height:5%;background:rgba(0,0,0,0.1);position:relative;text-align: left;}
-/*
-#question-mob-cont{width:100%;max-height:30%;height:auto;position:relative;text-align: left;font-size: 30px;float:left; color:#fff;}
-#question-mob{max-width:100%;height:auto;padding: 20px 20px 10px 20px;word-wrap: break-word;}*/
 
 /*  question  */
 #question-nr-mob-cont{width:100%;height:10%;position:relative;text-align: left;font-size: 20px;float:left; color:#313131;}
-#question-nr-mob{max-width:100%;height:auto;padding: 20px;}
+#question-nr-mob{max-width:100%;height:auto;padding: 5%;position: relative;top: 50%;transform: translateY(-50%);}
 
 /*  answers  */
 .btn-style{width:100%;height:20%;max-width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;margin:0 0 5% 0;text-align: center;text-decoration: none;display: inline-block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
-#answers-mob-cont{max-width:90%;width:90%;max-height:100%;height:77%;padding: 0 5% 0 5%;float:left;position: relative;word-wrap: break-word;}
-.btn-style:hover{background: #F6325A;color: #ffffff;}
+#answers-mob-cont{max-width:90%;width:100%;max-height:100%;height:77%;padding: 0 5% 0 5%;float:left;position: relative;word-wrap: break-word;}
+#answers-mob-cont button:hover{background: #fff;color:#F6325A;}
 
 /*  statusbar  */
 #status-mob-cont{width:100%;height:8%;background:#fff;position:relative;float:left;text-align:left;bottom:0;}
 #points-cont{width:85%;height:100%;position:relative;float:left;text-align:left;font-size: 20px;line-height:260%; }
-#points{padding-left:20px;color:#F6325A;}
+#points{position: relative;top: 50%;transform: translateY(-50%);color:#F6325A;padding-left:5%;}
 #position-cont{width:15%;height:100%;background:#585858;position:relative;float:left;text-align: center;font-size: 20px;line-height:280% ;}
-#position{color:#ffffff;}
+#position{position: relative;top: 50%;transform: translateY(-50%);color:#fff;text-align: center;}
 
 /*******  DESKTOP CSS  *******/
 #desktop-cont{width:auto;height:100%;background:#fff!important;}
@@ -68,16 +59,14 @@ h5{color:#313131;font-size:16px;}
 .progressbar-text{font-size:20px;color:#313131 !important;left: 20px !important;transform: translate(0, -50%)!important;}
 
 /******** DESKTOP STYLES ********/
-#startScreen {
-    background-color: #F6325A;
-    color: #FFF;
-    text-align: center;
-    padding: 25px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+#startScreen {background-color: #F6325A;color: #FFF;text-align: center;padding: 25px;position: absolute;width: 100%;height: 100%;}
+#startScreen button {margin-top: 25px;}
+#startScreen button:hover {background: #fff;color: #F6325A;}
 
-#startScreen button {
-    margin-top: 25px;
-}
+h1{font-family: "AT-Bold", sans-serif;color:#fff; font-size: 72px;padding:0 0 2% 0;line-height: 72px;}
+h5{color:#313131;font-size:16px;}
+#welkom{float:left;position: relative;margin:2% 0 0 2%;text-align: left;}
+#namen{position:fixed;bottom:0;margin:0 2% 1% 2%;right:0;}
+.btn-welkom{width:20%;height:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;line-height:28px;font-size: 28px;border-radius: 5px;float:left;position:relative;}
+#btn-start{position:relative;float:left;width:100%; height: 10%;min-height:10%;margin:0 0 0 2%;}
+.ng-scope{height: 100%;width:100%;}
