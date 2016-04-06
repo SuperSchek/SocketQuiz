@@ -10,7 +10,8 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
 
     // For any unmatched url, send to either /mobile or /desktop
     // depending on whether isMobile returns true or false.
-    $urlRouterProvider.otherwise(function() {
+    $urlRouterProvider
+        .otherwise(function() {
         if (isMobile == true) {
             return "/mobile"
         } else {
@@ -26,5 +27,9 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
         .state('mobile', {
             url: "/mobile",
             templateUrl: "partials/mobilePartial.html"
+        })
+        .state('lobby', {
+            url: "/lobby",
+            templateUrl: "partials/desktop/lobby.html"
         })
 });
