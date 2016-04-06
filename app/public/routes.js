@@ -22,9 +22,8 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
             url: "/desktop",
             templateUrl: "partials/desktopPartial.html"
         })
-
         .state('mobile', {
             url: "/mobile",
             templateUrl: "partials/mobilePartial.html"
         })
-})
+});
