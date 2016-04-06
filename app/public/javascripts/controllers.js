@@ -6,7 +6,9 @@ var app = angular.module('socket-quiz');
 app.controller('mainController', function($scope, $location, socket) {
     $scope.newCustomers = [];
     $scope.currentCustomer = {};
+
     $scope.setRoute = function(route) {
         $location.path(route);
     };
+
 });

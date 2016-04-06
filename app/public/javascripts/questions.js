@@ -64,6 +64,8 @@ function renderSockQes() {
     askQuestion();
 }
 
+var lel = document.getElementById('question');
+
 function askQuestion() {
     var numEnabled = 0;
     for (var i = 0; i < quiz.length; i++) {
@@ -77,29 +79,34 @@ function askQuestion() {
             var randomNum = Math.floor(Math.random() * quiz.length);
         } while (quiz[randomNum].enabled == false);
 
+        angular.element(document).find('#question').html(quiz[1].question);
+
+        //document.getElementById('question').innerHTML = quiz[1].question;
+
+        //angular.element(document).find('#question').text("hey");
+
         // Ask question
-        var stelVraag = document.getElementById("question");
-        stelVraag.innerHTML = quiz[randomNum].question;
-        var nummer = document.getElementById("question-nr");
-        nummer.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
-        var image = document.getElementById("image");
-        image.innerHTML = quiz[randomNum].picture;
-
-        var nummerMob = document.getElementById("question-nr-mob");
-        nummerMob.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
-
-        var answer1 = document.getElementById("qstn1");
-        answer1.innerHTML = quiz[randomNum].answers[0].answer;
-        var answer2 = document.getElementById("qstn2");
-        answer2.innerHTML = quiz[randomNum].answers[1].answer;
-        var answer3 = document.getElementById("qstn3");
-        answer3.innerHTML = quiz[randomNum].answers[2].answer;
-        var answer4 = document.getElementById("qstn4");
-        answer4.innerHTML = quiz[randomNum].answers[3].answer;
+        // var stelVraag = document.getElementById("question");
+        // stelVraag.innerHTML = quiz[randomNum].question;
+        // var nummer = document.getElementById("question-nr");
+        // nummer.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
+        // var image = document.getElementById("image");
+        // image.innerHTML = quiz[randomNum].picture;
+        //
+        // var nummerMob = document.getElementById("question-nr-mob");
+        // nummerMob.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
+        //
+        // var answer1 = document.getElementById("qstn1");
+        // answer1.innerHTML = quiz[randomNum].answers[0].answer;
+        // var answer2 = document.getElementById("qstn2");
+        // answer2.innerHTML = quiz[randomNum].answers[1].answer;
+        // var answer3 = document.getElementById("qstn3");
+        // answer3.innerHTML = quiz[randomNum].answers[2].answer;
+        // var answer4 = document.getElementById("qstn4");
+        // answer4.innerHTML = quiz[randomNum].answers[3].answer;
     }
     quiz[randomNum].enabled = false;
 }
 
-askQuestion();
 //document.getElementById("next-question-mob").onclick = askQuestion;
-document.getElementById("next-question").onclick = nextQuestion();
+//document.getElementById("next-question").onclick = nextQuestion();
