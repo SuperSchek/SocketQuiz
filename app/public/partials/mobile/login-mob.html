@@ -7,7 +7,7 @@
     var socket = io();
 
     function send (username) {
-        socket.emit('new user');
+        socket.emit('new user', username);
     }
 
 </script>
