@@ -5,7 +5,7 @@ var server = require('http').createServer(app);
 var io = require('../')(server);
 var port = process.env.PORT || 3000;
 
-
+var players = [];
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -21,21 +21,25 @@ io.on('connection', function(socket) {
   //   console.log('A client disconnected.');
   // });
 
-  socket.on('new user', function(uname) {
+  socket.on('new user', function(user) {
 
     // Check of naam al bestaat. For loop herhaald zich zoveel als er spelers zijn. als ingevulde 'uname' gelijk is aan
     // naam in objecten dan krijg je +1 achter de naam (jan1, jan2, jan3, enz.)
     for (i = 0; i < players.length; i++) {
-      if (players[i].name == uname) {
-        uname = uname + Math.floor((Math.random() * 1000) + 1);
+      if (players[i].name == user.gebruikersnaam) {
+        user.gebruikersnaam = user.gebruikersnaam + Math.floor((Math.random() * 1000) + 1);
 
         //resetten zodat zoeken door arrays opnieuw gebeurt
         i = i-i;
       }
     }
-    console.log('new user with username: ' + uname);
+    console.log('new user with username: ' + user.gebruikersnaam);
 
-    players.push(uname);
+    players.push(user);
+
+    console.log(user);
+
+    io.sockets.emit('send array', players);
 
     // Start functie wanneeer die door de forloop komt (dus naam uniek is in players array), nog geen idee of dit werkt.
     // moet in elk geval het object vullen. ID van gebruiker is zijn objectnummer. Deze returnen we ook naar de

@@ -1,13 +1,2 @@
-<form action="send()">
-    <input type="text" name="uname" class="uname" />
-    <input type="submit" class="button" />
-</form>
-
-<script>
-    var socket = io();
-
-    function send (username) {
-        socket.emit('new user', username);
-    }
-
-</script>
+<input type="text" id="uname"/>
+<div onclick="send()">SEND</div>
