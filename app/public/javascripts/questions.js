@@ -99,7 +99,8 @@ function askQuestion() {
 
     }
     quiz[randomNum].enabled = false;
-    angular.element(document).find('#vraag-intro').addClass('hidden');
+
+    angular.element(document).find('#vraag-intro').addClass('animate');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
     var line = new ProgressBar.Line('#progress', {
@@ -114,6 +115,7 @@ function askQuestion() {
             if (bar.value() == 1){
                 bar.setText("");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
+                angular.element(document).find('#antwoord-uitleg').addClass('animateIn');
 
             }
         }
