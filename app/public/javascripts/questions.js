@@ -12,7 +12,9 @@ var quiz = [{
         answer: "Parijs",
         punten: false
     },{
-        answer: "Berlijn",
+        answer: "<h2>Berlijn</h2>",
+        uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
+        'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
         punten: true
     }],
     picture: "<img src='../images/test.jpg' width='100%'/>",
@@ -30,7 +32,9 @@ var quiz = [{
         answer: "antw3",
         punten: false
     },{
-        answer: "antw4",
+        answer: "<h2>antw4</h2>",
+        uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
+        'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
         punten: true
     }],
     picture: "<img src='../images/test.jpg' width='100%'/>",
@@ -48,7 +52,9 @@ var quiz = [{
         answer: "ANSWR3",
         punten: false
     },{
-        answer: "ANSWR4",
+        answer: "<h2>ANSWR4</h2>",
+        uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
+        'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
         punten: true
     }],
     picture: "<img src='../images/test.jpg' width='100%'/>",
@@ -63,8 +69,6 @@ function nextQuestion() {
 function renderSockQes() {
     askQuestion();
 }
-
-var lel = document.getElementById('question');
 
 function askQuestion() {
     var numEnabled = 0;
@@ -83,6 +87,8 @@ function askQuestion() {
         angular.element(document).find('#question').html(quiz[randomNum].question);
         angular.element(document).find('#question-nr').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
         angular.element(document).find('#image').html(quiz[randomNum].picture);
+        angular.element(document).find('#antwoord-titel').html(quiz[randomNum].answers[3].answer);
+        angular.element(document).find('#antwoord-text').html(quiz[randomNum].answers[3].uitleg);
 
         //Mobile
         angular.element(document).find('#question-nr-mob').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
@@ -93,4 +99,24 @@ function askQuestion() {
 
     }
     quiz[randomNum].enabled = false;
+    angular.element(document).find('#vraag-intro').addClass('hidden');
+    angular.element(document).find('#antwoord-uitleg').addClass('hidden');
+    angular.element(document).find('#antwoord-uitleg').removeClass('show');
+    var line = new ProgressBar.Line('#progress', {
+        color: '#f6325a',
+        duration: 20000,
+        text: {
+            value: 20
+        },
+        step: function(state, bar) {
+            var nummer = Math.abs(((20 * bar.value())-20).toFixed(0));
+            bar.setText( nummer + " seconden");
+            if (bar.value() == 1){
+                bar.setText("");
+                angular.element(document).find('#antwoord-uitleg').addClass('show');
+
+            }
+        }
+    });
+    line.animate(1);
 }

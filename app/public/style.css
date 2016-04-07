@@ -67,6 +67,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 html button:focus {outline:none;}
 
 h1{font-family: "AT-Bold", sans-serif;color:#fff; font-size: 72px;padding:0 0 2% 0;line-height: 72px;}
+h2{font-family: "AT-Bold", sans-serif;color:#F6325A; font-size: 72px;padding:0 0 2% 0;line-height: 72px;}
 h5{color:#313131;font-size:16px;}
 #welkom{float:left;position: relative;margin:2% 0 0 2%;text-align: left;}
 #namen{position:fixed;bottom:0;margin:0 2% 1% 2%;right:0;}
@@ -88,8 +89,20 @@ h5{color:#313131;font-size:16px;}
 #btn-start-game{position:relative;float:right;width:20%; height: auto;margin:4% 4% 0 2%;}
 .btn-start-agame{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 
-#vraag-intro{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;height: 100%;width:100%;background: rgba(0, 0, 0,0.1);}
+#vraag-intro{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;height: 100%;width:100%;background: #F6325A;}
 #intro-text{position:relative;top: 45%;transform: translateY(-50%);margin:0 auto;text-align: center;}
 
 #btn-stelVraag{margin:0 auto;position:relative;width:20%;height: auto;}
 .btn-stelVraag{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
+.hidden{display: none;}
+.show{display: block;}
+
+#antwoord-uitleg{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;height: 100%;width:70%;background: #fff;}
+#antwoord-container{float:left;position: relative;margin:2% 0 0 2%;text-align: left;padding:25px;}
+#antwoord-juist{color:#313131;font-size: 30px;padding:0 0 4% 0;}
+#antwoord-titel{position:relative;color:#F6325A!important;}
+#antwoord-text{position:relative;color:#313131;font-family: "AT", sans-serif;font-size: 30px;line-height: 40px}
+#antwoord-btn{padding:0 0 0 25px;width:40%;float:left;position: relative;}
+#btn-volgendeVraag{position:relative;height: auto;padding:25px;width:100%;}
+.btn-volgendeVraag{line-height:80px;padding:0% 10%;font-family: "AT-Bold",sans-serif;background-color: #fff;border: 2pt solid #F6325A;color: #F6325A;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
+#btn-volgendeVraag button:hover{background: #F6325A;color:#fff;}

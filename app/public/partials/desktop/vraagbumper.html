@@ -4,6 +4,15 @@
         <div id="btn-stelVraag"><button onclick="askQuestion()" id="next-question" class="btn-stelVraag hvr-fade">Stel vraag!</button></div>
     </div>
 </div>
+<div id="antwoord-uitleg" class="hidden">
+    <div id="antwoord-container">
+        <div id="antwoord-juist">Dit is het juiste antwoord:</div>
+        <div id="antwoord-titel"></div>
+        <div id="antwoord-text"></div>
+    </div>
+    <div id="antwoord-btn"><div id="btn-volgendeVraag"><button onclick="askQuestion()" id="next-question" class="btn-volgendeVraag hvr-fade">Stel vraag!</button></div></div>
+
+</div>
 
 <div id="desktop-cont">
 
@@ -32,7 +41,4 @@
     <div id="time-cont">
         <div class="progress" id="progress"></div>
     </div>
-
 </div>
-<script>askQuestion()</script>
-<script type="application/javascript" src="../../javascripts/progressbar/timer.js"></script>
