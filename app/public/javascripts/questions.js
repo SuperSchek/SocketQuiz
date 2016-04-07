@@ -94,7 +94,7 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#qstn3').html(quiz[randomNum].answers[2].answer);
     angular.element(document).find('#qstn4').html(quiz[randomNum].answers[3].answer);
 
-    angular.element(document).find('#vraag-intro').addClass('hidden');
+    angular.element(document).find('#vraag-intro').addClass('animate');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
 
@@ -125,6 +125,7 @@ function startTimer() {
             if (bar.value() == 1){
                 bar.setText("");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
+                angular.element(document).find('#antwoord-uitleg').addClass('animateIn');
             }
         }
     });
