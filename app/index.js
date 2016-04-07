@@ -6,6 +6,7 @@ var io = require('../')(server);
 var port = process.env.PORT || 3000;
 
 var players = [];
+var serverQuiz;
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -55,4 +56,30 @@ io.on('connection', function(socket) {
 
   });
 
+  socket.on('question request', function(quiz) {
+    // Empty the serverQuiz array so we're ready to receive the next round.
+    serverQuiz = [];
+    serverQuiz = quiz;
+
+    // Initialize numEnabled to 0.
+    var numEnabled = 0;
+    // Set numEnabled to the total amount of questions left.
+    // (questions with enabled set to true)
+    for (var i = 0; i < serverQuiz.length; i++) {
+      if (serverQuiz[i].enabled == true) {
+        numEnabled++;
+      }
+    }
+    
+    for (var j = 0; j < numEnabled; j++) {
+      do { var randomNum = Math.floor(Math.random() * serverQuiz.length); }
+      while (serverQuiz[randomNum].enabled == false);
+
+      io.sockets.emit('render question', randomNum);
+    }
+
+    serverQuiz[randomNum].enabled = false;
+
+    io.sockets.emit('update quiz', serverQuiz);
+  });
 });
