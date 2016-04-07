@@ -20,20 +20,26 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
     });
 
     $stateProvider
-        .state('desktop', {
-            url: "/desktop",
-            templateUrl: "partials/desktopPartial.html"
-        })
+        //mobile links
         .state('mobile', {
             url: "/mobile",
             templateUrl: "partials/mobilePartial.html"
         })
+        .state('welkom', {
+            url: "/mobile/welkom",
+            templateUrl: "partials/mobile/welkom.html"
+        })
+        //desktop links
+        .state('desktop', {
+            url: "/desktop",
+            templateUrl: "partials/desktopPartial.html"
+        })
         .state('lobby', {
-            url: "/lobby",
+            url: "/desktop/lobby",
             templateUrl: "partials/desktop/lobby.html"
         })
         .state('quiz', {
-            url: "/quiz",
-            templateUrl: "partials/desktop/questionContent.html"
+            url: "/desktop/quiz",
+            templateUrl: "partials/desktop/vraagbumper.html"
         })
 });

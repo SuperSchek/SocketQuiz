@@ -2,8 +2,6 @@
 <html ng-app="socket-quiz">
   <head>
     <title>SocketQuiz</title>
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
     <meta name="mobile-web-app-capable" content="yes">
@@ -14,16 +12,15 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
     <script type="application/javascript" src="javascripts/progressbar/progressbar.min.js"></script>
 
   </head>
 
   <body>
-    <div ng-controller="mainController">
-      <div ui-view></div>
+    <div ng-controller="mainController" class="test">
+      <div ui-view class="test"></div>
     </div>
-
     <!--!!!!BELANGRIJK!!!!-->
     <!--DE VOLGORDE WAAROP DE SCRIPTS GELADEN WORDEN IS BELANGRIJK-->
 
@@ -46,10 +43,6 @@
 
     <script type="application/javascript" src="javascripts/player.js"></script>
     <script type="text/javascript" src="javascripts/questions.js"></script>
-
-    <script>
-      askQuestion();
-    </script>
 
   </body>
 </html>

@@ -12,3 +12,7 @@ app.controller('mainController', function($scope, $location, socket) {
     };
 
 });
+
+app.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
+}]);
