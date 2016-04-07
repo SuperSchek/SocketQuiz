@@ -18,5 +18,32 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function () {
     console.log('A client disconnected.');
   });
-  
+
+  socket.on('new user', function(uname) {
+
+    // Check of naam al bestaat. For loop herhaald zich zoveel als er spelers zijn. als ingevulde 'uname' gelijk is aan
+    // naam in objecten dan krijg je +1 achter de naam (jan1, jan2, jan3, enz.)
+    for (i = 0; i < players.length; i++) {
+      if (players[i].name == uname) {
+        uname = uname + Math.floor((Math.random() * 1000) + 1);
+
+        //resetten zodat zoeken door arrays opnieuw gebeurt
+        i = i-i;
+      }
+    }
+
+    // Start functie wanneeer die door de forloop komt (dus naam uniek is in players array), nog geen idee of dit werkt.
+    // moet in elk geval het object vullen. ID van gebruiker is zijn objectnummer. Deze returnen we ook naar de
+    // gebruiker zodat we met de juiste gebruikers kunnen communiceren.
+    players.push(uname);
+    var n = players.length;
+    players[n].push({id : n});
+    players[n].push({name : uname});
+    players[n].push({host : false});
+    players[n].push({score : 0});
+    return players[n].id; // nu een harde return, dit moet een socket worden;
+
+
+  });
+
 });
