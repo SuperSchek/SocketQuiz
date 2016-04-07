@@ -1,26 +1,5 @@
-<!-- Load Angular mobileController-->
-<script src="../controllers/mobileController.js"></script>
-<div id="mobile-cont">
-    <!--Timebar-->
-    <div id="time-mob-cont">
-        <div class="progress" id="progress-mob"></div>
-    </div>
-
-    <!--Vraag
-    <div id="question-mob-cont"><div id="question-mob"></div></div>-->
-    <div id="question-nr-mob-cont"><div id="question-nr-mob">vraag 1/21</div></div>
-
-    <!--Antwoorden-->
-    <div id="answers-mob-cont">
-        <button class="btn-style" id="qstn1">München</button>
-        <button class="btn-style" id="qstn2">Amsterdam</button>
-        <button class="btn-style" id="qstn3">Parijs</button>
-        <button class="btn-style" id="qstn4">Berlijn</button>
-    </div>
-
-    <!--Status-->
-    <div id="status-mob-cont">
-        <div id="points-cont"><div id="points">Je hebt 20 punten</div></div><!--op de 20 moet een var komen-->
-        <div id="position-cont"><div id="position">1e</div></div>
+<div class="row-fluid">
+    <div class="span12">
+        <ng-include src="'partials/mobile/welkom.html'"></ng-include>
     </div>
 </div>
