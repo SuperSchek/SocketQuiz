@@ -103,7 +103,9 @@ function askQuestion() {
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
 
-    angular.element(document).find('#question').html('');
+    // Iedere keer als er een vraag geladen wordt eerst #question leeg gooien.
+    // Hiermee voorkomen we dat de laadbalk vol is bij de start van het aftellen.
+    angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#f6325a',
         duration: 20000,
