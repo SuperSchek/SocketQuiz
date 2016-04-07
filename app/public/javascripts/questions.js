@@ -102,6 +102,8 @@ function askQuestion() {
     angular.element(document).find('#vraag-intro').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
+
+    angular.element(document).find('#question').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#f6325a',
         duration: 20000,
