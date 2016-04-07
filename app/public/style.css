@@ -85,6 +85,8 @@ h5{color:#313131;font-size:16px;}
 #btn-start-game{position:relative;float:right;width:20%; height: auto;margin:4% 4% 0 2%;}
 .btn-start-agame{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 
-#vraag-intro{position:relative;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;padding:25px;height:25%;}
+#vraag-intro{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;height: 100%;width:100%;background: rgba(0, 0, 0,0.1);}
+#intro-text{position:relative;top: 45%;transform: translateY(-50%);margin:0 auto;text-align: center;}
+
 #btn-stelVraag{margin:0 auto;position:relative;width:20%;height: auto;}
 .btn-stelVraag{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
