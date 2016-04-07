@@ -99,7 +99,7 @@ function askQuestion() {
     }
     quiz[randomNum].enabled = false;
 }
-
 askQuestion();
+
 //document.getElementById("next-question-mob").onclick = askQuestion;
 document.getElementById("next-question").onclick = nextQuestion();

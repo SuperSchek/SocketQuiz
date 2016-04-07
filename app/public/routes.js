@@ -32,4 +32,8 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
             url: "/lobby",
             templateUrl: "partials/desktop/lobby.html"
         })
+        .state('quiz', {
+            url: "/quiz",
+            templateUrl: "partials/desktop/vraagbumper.html"
+        })
 });
