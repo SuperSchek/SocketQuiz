@@ -77,29 +77,17 @@ function askQuestion() {
             var randomNum = Math.floor(Math.random() * quiz.length);
         } while (quiz[randomNum].enabled == false);
 
-        // Ask question
-        var stelVraag = document.getElementById("question");
-        stelVraag.innerHTML = quiz[randomNum].question;
-        var nummer = document.getElementById("question-nr");
-        nummer.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
-        var image = document.getElementById("image");
-        image.innerHTML = quiz[randomNum].picture;
+        //Desktop
+        angular.element(document).find('#question').html(quiz[randomNum].question);
+        angular.element(document).find('#question-nr').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
+        angular.element(document).find('#image').html(quiz[randomNum].picture);
 
-        var nummerMob = document.getElementById("question-nr-mob");
-        nummerMob.innerHTML = "vraag " + quiz[randomNum].questionNr + "/" + quiz.length;
-
-        var answer1 = document.getElementById("qstn1");
-        answer1.innerHTML = quiz[randomNum].answers[0].answer;
-        var answer2 = document.getElementById("qstn2");
-        answer2.innerHTML = quiz[randomNum].answers[1].answer;
-        var answer3 = document.getElementById("qstn3");
-        answer3.innerHTML = quiz[randomNum].answers[2].answer;
-        var answer4 = document.getElementById("qstn4");
-        answer4.innerHTML = quiz[randomNum].answers[3].answer;
+        //Mobile
+        angular.element(document).find('#question-nr-mob').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
+        angular.element(document).find('#qstn1').html(quiz[randomNum].answers[0].answer);
+        angular.element(document).find('#qstn2').html(quiz[randomNum].answers[1].answer);
+        angular.element(document).find('#qstn3').html(quiz[randomNum].answers[2].answer);
+        angular.element(document).find('#qstn4').html(quiz[randomNum].answers[3].answer);
     }
     quiz[randomNum].enabled = false;
 }
-askQuestion();
-
-//document.getElementById("next-question-mob").onclick = askQuestion;
-document.getElementById("next-question").onclick = nextQuestion();

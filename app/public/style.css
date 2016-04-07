@@ -43,7 +43,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 
 /*  question  */
 #question-cont{width:70%;height:auto;position:relative;text-align: left;font-size: 60px;float:left; color:#F6325A;}
-#question{max-width:100%;height:auto;padding: 70px 80px 20px 80px;}
+#question{max-width:100%;height:auto;padding: 70px 80px 4% 80px;}
 
 #question-nr-cont{width:70%;height:auto;position:relative;text-align: left;font-size: 26px;float:left; color:#313131;}
 #question-nr{max-width:100%;height:auto;padding: 0 0 0 80px;}
