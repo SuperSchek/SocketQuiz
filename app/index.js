@@ -70,7 +70,7 @@ io.on('connection', function(socket) {
         numEnabled++;
       }
     }
-    
+
     for (var j = 0; j < numEnabled; j++) {
       do { var randomNum = Math.floor(Math.random() * serverQuiz.length); }
       while (serverQuiz[randomNum].enabled == false);
