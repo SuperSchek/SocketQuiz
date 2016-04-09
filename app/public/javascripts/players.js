@@ -12,6 +12,11 @@ function send() {
         score : 0,
         id : playersArray.length
     });
+
+    $(element).submit(function() {
+        console.log('form was submitted');
+        textFields.blur();
+    });
 }
 
 socket.on('send array', function(players) {
