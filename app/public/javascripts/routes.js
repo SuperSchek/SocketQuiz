@@ -33,6 +33,10 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
             url: "/mobile/login",
             templateUrl: "../partials/mobile/login-mob.html"
         })
+        .state('quiz-mob', {
+            url: "/mobile/quiz-mob",
+            templateUrl: "partials/mobile/questions-mob.html"
+        })
         //desktop links
         .state('desktop', {
             url: "/desktop",

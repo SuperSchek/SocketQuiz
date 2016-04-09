@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('../')(server);
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 
 var players = [];
 var serverQuiz;
@@ -54,7 +54,7 @@ io.on('connection', function(socket) {
         numEnabled++;
       }
     }
-    
+
     for (var j = 0; j < numEnabled; j++) {
       do { var randomNum = Math.floor(Math.random() * serverQuiz.length); }
       while (serverQuiz[randomNum].enabled == false);

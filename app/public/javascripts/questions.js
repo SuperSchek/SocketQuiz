@@ -1,80 +1,78 @@
 var quiz = [
     {
-        question: "Sander is cool!",
+        question: "Wie is de coach op deze foto?",
         questionNr:1,
         answers: [
             {
-                answer: "Sander",
+                answer: "Joachim Löw",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "Louis van Gaal",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "José Mourinho",
                 punten: false
-            },-
+            },
             {
-            answer: "Correct Answer",
-            uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
-                    'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
+            answer: "Jürgen Klopp",
+            uitleg: 'Jürgen Klopp werd bekend door zijn successen met Borussia Dortmund (2x de Bundesliga en een finaleplaats in de Champions League) en zijn opmerkelijke uitspraken.'+
+                    '<br><br>Klopp is sinds een jaar trainer bij Liverpool FC in Engeland en heeft er de bijnaam: "the normal one". Niet te verwarren met "the special one", José Mourinho.',
             punten: true
             }
         ],
-        picture: "<img src='../images/test.jpg' width='100%'/>",
+        picture: "<img src='http://e1.365dm.com/16/02/16-9/20/jurgen-klopp-liverpool-thumbs-up_3412823.jpg?20160208152020' height='100%' width='100%'/>",
         enabled:true
     },
     {
-        question: "Jacco is cool!",
+        question: "Wat is de naam van de eerst volgende Star Wars film?",
         questionNr:2,
         answers: [
             {
-                answer: "Jacco",
+                answer: "Star Wars: The Two Towers",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "Star Wars: The Deathly Hallows",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "Star Wars: The Force Awakens",
                 punten: false
             },
             {
-                answer: "Correct Answer",
-                uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
-                        'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
+                answer: "Star Wars: Rogue One",
+                uitleg: '<iframe src="https://www.youtube.com/embed/Wji-BZ0oCwg" frameborder="0" allowfullscreen></iframe>',
                 punten: true
             }
         ],
-        picture: "<img src='../images/test.jpg' width='100%'/>",
+        picture: "<img src='http://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/24/10/star-wars-rogue-one-cast.jpg' width='100%'/>",
         enabled:true
     },
     {
-        question: "Nico is cool!",
+        question: "Wie is deze DJ?",
         questionNr:3,
         answers: [
             {
-                answer: "Nico",
+                answer: "Paul Elstak",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "DJ Jean",
                 punten: false
             },
             {
-                answer: "Wrong Answer",
+                answer: "Charly Lownoise",
                 punten: false
             },
             {
-                answer: "Correct Answer",
-                uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
-                'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
+                answer: "Mental Theo",
+                uitleg: "Theo Nabuurs ('s-Hertogenbosch, 14 februari 1965) is een Nederlandse videojockey en presentator die vooral bekend is als Mental Theo. Dit pseudoniem zou een bijnaam zijn die hij had gekregen vanwege zijn aparte manier van dansen in discotheken.",
                 punten: true
             }
         ],
-        picture: "<img src='../images/test.jpg' width='100%'/>",
+        picture: "<img src='http://www.janvis.nl/wp-content/uploads/2013/03/mental-theo.jpg' width='100%'/>",
         enabled:true
     }
 ];
@@ -95,6 +93,8 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#qstn4').html(quiz[randomNum].answers[3].answer);
 
     angular.element(document).find('#vraag-intro').addClass('animate');
+    angular.element(document).find('#vraag-intro-mob').addClass('animate');
+    angular.element(document).find('#vraag-intro-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
 
@@ -123,9 +123,8 @@ function startTimer() {
             var nummer = Math.abs(((20 * bar.value())-20).toFixed(0));
             bar.setText( nummer + " seconden");
             if (bar.value() == 1){
-                bar.setText("");
+                bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
-                angular.element(document).find('#antwoord-uitleg').addClass('animateIn');
             }
         }
     });

@@ -2,7 +2,7 @@ var playersArray = [];
 var playerNumber;
 
 function send() {
-    var username = $('#uname').val();
+    var username = $('#welkom-btn-mob-text-veld').val();
 
     playerNumber = playersArray.length;
 
