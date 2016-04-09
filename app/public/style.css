@@ -92,6 +92,9 @@ h5{color:#313131;font-size:16px;}
 #vraag-intro{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;height: 100%;width:100%;background: #F6325A;}
 #intro-text{position:relative;top: 45%;transform: translateY(-50%);margin:0 auto;text-align: center;}
 
+#vraag-intro-mob{z-index:100;position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;height: 100%;width:100%;background: #F6325A;}
+#intro-text-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px; color:#fff;line-height: 50px;margin:4% 0 4% 4%;}
+
 #btn-stelVraag{margin:0 auto;position:relative;width:20%;height: auto;}
 .btn-stelVraag{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 .hidden{display: none;}

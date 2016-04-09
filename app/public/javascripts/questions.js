@@ -68,8 +68,7 @@ var quiz = [
             },
             {
                 answer: "Mental Theo",
-                uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
-                'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
+                uitleg: "Theo Nabuurs ('s-Hertogenbosch, 14 februari 1965) is een Nederlandse videojockey en presentator die vooral bekend is als Mental Theo. Dit pseudoniem zou een bijnaam zijn die hij had gekregen vanwege zijn aparte manier van dansen in discotheken.",
                 punten: true
             }
         ],
@@ -94,9 +93,10 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#qstn4').html(quiz[randomNum].answers[3].answer);
 
     angular.element(document).find('#vraag-intro').addClass('animate');
+    angular.element(document).find('#vraag-intro-mob').addClass('animate');
+    angular.element(document).find('#vraag-intro-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
-
 
     startTimer();
 });
