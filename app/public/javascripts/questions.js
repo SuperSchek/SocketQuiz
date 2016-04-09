@@ -8,15 +8,15 @@ var quiz = [
                 punten: false
             },
             {
-                answer: "Amsterdamfsdfsdfsdfdsff",
+                answer: "Wrong Answer",
                 punten: false
             },
             {
-                answer: "Parijs",
+                answer: "Wrong Answer",
                 punten: false
-            },
+            },-
             {
-            answer: "<h2>Berlijn</h2>",
+            answer: "Correct Answer",
             uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
                     'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
             punten: true
@@ -34,15 +34,15 @@ var quiz = [
                 punten: false
             },
             {
-                answer: "antw2",
+                answer: "Wrong Answer",
                 punten: false
             },
             {
-                answer: "antw3",
+                answer: "Wrong Answer",
                 punten: false
             },
             {
-                answer: "<h2>antw4</h2>",
+                answer: "Correct Answer",
                 uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
                         'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
                 punten: true
@@ -60,15 +60,15 @@ var quiz = [
                 punten: false
             },
             {
-                answer: "ANSWR2",
+                answer: "Wrong Answer",
                 punten: false
             },
             {
-                answer: "ANSWR3",
+                answer: "Wrong Answer",
                 punten: false
             },
             {
-                answer: "<h2>ANSWR4</h2>",
+                answer: "Correct Answer",
                 uitleg: 'Elf atleten en officials van de Israëlische ploeg werden in de nacht van 4 op 5 september gegijzeld in hun appartement in het olympisch dorp door leden van de Palestijnse terreurbeweging Zwarte September.'+
                 'Uiteindelijk vonden alle elf de Israëliërs en een Duitse politieman de dood. Tijdens de pogingen de atleten te redden vonden vijf van de acht gijzelnemers eveneens de dood.',
                 punten: true

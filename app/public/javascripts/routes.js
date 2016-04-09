@@ -23,28 +23,28 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
         //mobile links
         .state('mobile', {
             url: "/mobile",
-            templateUrl: "partials/mobilePartial.html"
+            templateUrl: "../partials/mobilePartial.html"
         })
         .state('welkom', {
             url: "/mobile/welkom",
-            templateUrl: "partials/mobile/welkom.html"
+            templateUrl: "../partials/mobile/welkom.html"
         })
         .state('login', {
             url: "/mobile/login",
-            templateUrl: "partials/mobile/login-mob.html"
+            templateUrl: "../partials/mobile/login-mob.html"
         })
         //desktop links
         .state('desktop', {
             url: "/desktop",
-            templateUrl: "partials/desktopPartial.html"
+            templateUrl: "../partials/desktopPartial.html"
         })
         .state('lobby', {
             url: "/desktop/lobby",
-            templateUrl: "partials/desktop/lobby.html"
+            templateUrl: "../partials/desktop/lobby.html"
         })
         .state('quiz', {
             url: "/desktop/quiz",
-            templateUrl: "partials/desktop/vraagbumper.html"
+            templateUrl: "../partials/desktop/vraagbumper.html"
         })
 });
 

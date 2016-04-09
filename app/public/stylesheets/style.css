@@ -1,6 +1,6 @@
 /*******  FONT SETUP  *******/
-@font-face {font-family: "AT";src: url("fonts/AmericanTypewriter.ttf") format("truetype");}
-@font-face {font-family: "AT-Bold";src: url("fonts/AmericanTypewriter-Bold.ttf") format("truetype");}
+@font-face {font-family: "AT";src: url("../fonts/AmericanTypewriter.ttf") format("truetype");}
+@font-face {font-family: "AT-Bold";src: url("../fonts/AmericanTypewriter-Bold.ttf") format("truetype");}
 html {width:100%;height: 100%;overflow: hidden;}
 body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-height: 100%;max-width: 100%;height:100%;width:100%;}
 .test{height: 100%;}
@@ -8,6 +8,36 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 
 /*******  MOBILE CSS  *******/
 #mobile-cont{width:100%;height:100%;}
+/*  login  */
+#login-form {
+    text-align: center;
+}
+#uname {
+    background: rgba(0, 0, 0, 0);
+    color: #FFF;
+    font-family: "AT", sans-serif;
+    font-size: 25px;
+    line-height: 20px;
+    height: 100%;
+    border: none;
+    border-bottom: 2px solid #FFF;
+    margin: 15% auto 10% auto;
+    text-align: center;
+}
+#submitUser {
+    height: 100%;
+    font-family: "AT-Bold", sans-serif;
+    background-color: #F6325A;
+    border: 2pt solid #fff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 28px;
+    font-size: 18px;
+    width: 85%;
+    border-radius: 5px;
+}
+
 /*  timer  */
 #time-mob-cont{width:100%;height:5%;background:rgba(0,0,0,0.1);position:relative;text-align: left;}
 
