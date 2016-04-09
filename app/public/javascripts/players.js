@@ -4,19 +4,18 @@ var playerNumber;
 function send() {
     var username = $('#welkom-btn-mob-text-veld').val();
 
-    playerNumber = playersArray.length;
+    if (username == undefined) {
+        username = "Naam a.u.b.";
+    } else {
+        playerNumber = playersArray.length;
 
-    socket.emit('new user', playerNumber, username = {
-        gebruikersnaam : username,
-        host : false,
-        score : 0,
-        id : playersArray.length
-    });
-
-    $(element).submit(function() {
-        console.log('form was submitted');
-        textFields.blur();
-    });
+        socket.emit('new user', playerNumber, username = {
+            gebruikersnaam : username,
+            host : false,
+            score : 0,
+            id : playersArray.length
+        });
+    }
 }
 
 socket.on('send array', function(players) {
@@ -29,3 +28,11 @@ socket.on('update playerArray', function(players) {
     playersArray = [];
     playersArray = players;
 });
+
+socket.on('who is leaving', function() {
+    socket.emit('still here', playerNumber);
+});
+
+function whosHere() {
+    socket.emit('still here', playerNumber);
+}
