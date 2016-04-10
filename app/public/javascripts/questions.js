@@ -96,8 +96,9 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#vraag-intro-mob').addClass('animate');
     angular.element(document).find('#vraag-intro-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
+    angular.element(document).find('#vraag-uitslag-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
-
+    angular.element(document).find('#vraag-uitslag-mob').removeClass('show');
     startTimer();
 });
 
@@ -125,6 +126,7 @@ function startTimer() {
             if (bar.value() == 1){
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
+                angular.element(document).find('#vraag-uitslag-mob').addClass('show');
             }
         }
     });
