@@ -135,6 +135,7 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#vraag-uitslag-fout-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
     angular.element(document).find('#vraag-uitslag-mob').removeClass('show');
+    angular.element(document).find('#vraag-uitslag-fout-mob').removeClass('show');
     startTimer();
 });
 
@@ -162,7 +163,6 @@ function startTimer() {
             if (bar.value() == 1){
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
-                angular.element(document).find('#vraag-uitslag-mob').addClass('show');
                 checkAnswer();
                 //check of het goede antwoord is gegeven
             }

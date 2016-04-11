@@ -1,5 +1,5 @@
 var winnerGifs = ["https://m.popkey.co/0b1935/qrOQG.gif", "https://m.popkey.co/6d9ceb/wrkk.gif"];
-var loserGifs = ["https://m.popkey.co/0b1935/qrOQG.gif", "https://m.popkey.co/6d9ceb/wrkk.gif"];
+var loserGifs = ["https://m.popkey.co/8e4d92/xM6aJ.gif", "https://m.popkey.co/16ac19/eL4ZQ.gif"];
 
 function printGifSucces() {
     var randomnumber = Math.floor(Math.random() * 2);
