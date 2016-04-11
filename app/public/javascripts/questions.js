@@ -152,7 +152,7 @@ function startTimer() {
     angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#f6325a',
-        duration: 5000,
+        duration: 20000,
         text: {
             value: 20
         },
