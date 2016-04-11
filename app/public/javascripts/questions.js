@@ -138,7 +138,6 @@ socket.on('render question', function(randomNum) {
     startTimer();
 });
 
-
 socket.on('update quiz', function(serverQuiz) {
     quiz = serverQuiz;
 });
@@ -153,7 +152,7 @@ function startTimer() {
     angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#f6325a',
-        duration: 20000,
+        duration: 5000,
         text: {
             value: 20
         },
@@ -183,9 +182,11 @@ function checkAnswer() {
     if (angular.element(document).find('#' + selectedId).html() == quiz[randomNr].answers[3].answer) {
         angular.element(document).find('#vraag-uitslag-mob').addClass('show');
         correct = true;
+        printGifSucces();
         //playersArray[playersArray.length].score++
     } else {
         correct = false;
+        printGifLoser();
         angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
     }
 }
