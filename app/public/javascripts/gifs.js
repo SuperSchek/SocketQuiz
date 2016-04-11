@@ -1,5 +1,5 @@
 var winnerGifs = ["https://m.popkey.co/0b1935/qrOQG.gif", "https://m.popkey.co/6d9ceb/wrkk.gif"];
-var loserGifs = ["https://m.popkey.co/8e4d92/xM6aJ.gif", "https://m.popkey.co/16ac19/eL4ZQ.gif"];
+var loserGifs = ["https://m.popkey.co/9305c4/bbGW.gif", "https://m.popkey.co/16ac19/eL4ZQ.gif"];
 
 function printGifSucces() {
     var randomnumber = Math.floor(Math.random() * 2);
@@ -16,7 +16,7 @@ function printGifLoser() {
     var randomnumber = Math.floor(Math.random() * 2);
     if (randomnumber == 0) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[randomnumber] + ")no-repeat right");
-        angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position", "0");
+        angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-75px");
     } else if (randomnumber == 1) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[randomnumber] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-340px");
