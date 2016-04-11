@@ -40,7 +40,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 #leaderboard-cont{width:30%;min-height:100%;position:relative;float:right;text-align: left;font-size: 26px;color:#fff;background:#F6325A;margin:0;}
 #leaderboard{max-width:100%;min-height:100%;padding:0 20px 0 20px;overflow: scroll!important;}
 #leaderboard-title{font-size: 40px;padding:20px 0 20px 0;text-align: center;}
-.leaderboard-card{font-family:"AT",sans-serif;background:#fff; height:auto;max-width:100%;position:relative;padding:10px 20px 10px 20px;box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);color:#313131;text-align:left;margin-bottom: 20px;overflow: hidden;}
+.leaderboard-card{font-family:"AT",sans-serif;background:#fff; height:auto;max-width:100%;position:relative;padding:20px 20px 20px 20px;box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);color:#313131;text-align:left;margin-bottom: 20px;overflow: hidden;border-radius: 5px;}
 .leaderboard-card-score{font-family:"AT-Bold",sans-serif;text-align: right;float:right;position: relative;}
 
 /*  quiz + roomname  */

@@ -88,7 +88,15 @@ var quiz = [
         enabled:true
     }
 ];
+
+var selectedAnswer;
+var randomNr;
+var selectedId;
+var correct;
+
 socket.on('render question', function(randomNum) {
+    randomNr = randomNum;
+
     //Desktop
     angular.element(document).find('#question').html(quiz[randomNum].question);
     angular.element(document).find('#question-nr').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
@@ -102,12 +110,16 @@ socket.on('render question', function(randomNum) {
     var arr = [];
 
     while(arr.length < 4){
-        var randomnumber=Math.floor(Math.random() * 4)
-        var found=false;
-        for(var i=0;i<arr.length;i++){
-            if(arr[i]==randomnumber){found=true;break}
+        var randomnumber = Math.floor(Math.random() * 4);
+        var found = false;
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i] == randomnumber) {
+                found=true;break
+            }
         }
-        if(!found)arr[arr.length]=randomnumber;
+        if(!found) {
+            arr[arr.length] = randomnumber;
+        }
     }
 
     angular.element(document).find('#qstn1').html(quiz[randomNum].answers[arr[0]].answer);
@@ -120,10 +132,12 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#vraag-intro-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').addClass('hidden');
     angular.element(document).find('#vraag-uitslag-mob').addClass('hidden');
+    angular.element(document).find('#vraag-uitslag-fout-mob').addClass('hidden');
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
     angular.element(document).find('#vraag-uitslag-mob').removeClass('show');
     startTimer();
 });
+
 
 socket.on('update quiz', function(serverQuiz) {
     quiz = serverQuiz;
@@ -150,8 +164,43 @@ function startTimer() {
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
                 angular.element(document).find('#vraag-uitslag-mob').addClass('show');
+                checkAnswer();
+                //check of het goede antwoord is gegeven
             }
         }
     });
     line.animate(1);
 }
+
+function onoff(id){
+    selectedId = "";
+    selectedAnswer = angular.element(document).find('#' + id).val();
+    selectedId = id;
+}
+
+//deze inzetten als de timer is afgelopen
+function checkAnswer() {
+    if (angular.element(document).find('#' + selectedId).html() == quiz[randomNr].answers[3].answer) {
+        angular.element(document).find('#vraag-uitslag-mob').addClass('show');
+        correct = true;
+        //playersArray[playersArray.length].score++
+    } else {
+        correct = false;
+        //angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
+    }
+}
+
+//geselecteerde button waarde true/false meegeven
+//steeds maar 1 true mogelijk
+//if buttonwaarde == true check if angular.element(document).find('#DEBUTTON').html() == quiz[randomNum].answers[3].answer
+//als dat zo is, dan punten++
+//in alle andere gevallen zorgen dat het verlies scherm getoond wordt
+
+//if(angular.element(document).find('#qstn1').val() == true) {
+//    if (quiz[randomNum].answers[RANDOMNR].punten == true) {
+//        angular.element(document).find('#vraag-uitslag-mob').addClass('show');
+//        playersArray[playerNumber].score++
+//    } else {
+//        angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
+//    }
+//}

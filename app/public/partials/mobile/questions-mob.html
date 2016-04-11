@@ -6,7 +6,8 @@
 
 <div id="vraag-uitslag-mob" class="animateIn" >
     <div id="antwoord-cont-mob">
-        <img src="https://d13yacurqjgara.cloudfront.net/users/159981/screenshots/2112264/checkmark.gif"/>
+        <script></script>
+        <img src="../../images/nieuwcheckmark.gif"/>
         <div id="antwoord-juist-mob">Juist!</div>
         <div id="antwoord-juist-punten-mob">+1 punt</div>
     </div>
@@ -32,16 +33,10 @@
 
     <!--Antwoorden-->
     <div id="answers-mob-cont">
-        <button class="btn-style" id="qstn1"></button>
-        <button class="btn-style" id="qstn2"></button>
-        <button class="btn-style" id="qstn3"></button>
-        <button class="btn-style" id="qstn4"></button>
-
-        <script type="text/javascript">
-            function onoff() {
-                angular.element(document).find('#qstn1').val();
-            }
-        </script>
+        <button class="btn-style" value="0" id="qstn1" onclick="onoff('qstn1')"></button>
+        <button class="btn-style" value="1" id="qstn2" onclick="onoff('qstn2')"></button>
+        <button class="btn-style" value="2" id="qstn3" onclick="onoff('qstn3')"></button>
+        <button class="btn-style" value="3" id="qstn4" onclick="onoff('qstn4')"></button>
     </div>
 
     <!--Status-->
