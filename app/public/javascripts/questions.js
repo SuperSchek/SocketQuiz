@@ -186,21 +186,6 @@ function checkAnswer() {
         //playersArray[playersArray.length].score++
     } else {
         correct = false;
-        //angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
+        angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
     }
 }
-
-//geselecteerde button waarde true/false meegeven
-//steeds maar 1 true mogelijk
-//if buttonwaarde == true check if angular.element(document).find('#DEBUTTON').html() == quiz[randomNum].answers[3].answer
-//als dat zo is, dan punten++
-//in alle andere gevallen zorgen dat het verlies scherm getoond wordt
-
-//if(angular.element(document).find('#qstn1').val() == true) {
-//    if (quiz[randomNum].answers[RANDOMNR].punten == true) {
-//        angular.element(document).find('#vraag-uitslag-mob').addClass('show');
-//        playersArray[playerNumber].score++
-//    } else {
-//        angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
-//    }
-//}
