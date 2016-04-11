@@ -149,7 +149,10 @@ iframe {width:100%;height: 400px;}
 #antwoord-juist-mob{color:#F6325A;font-size: 40px;padding:0 4% 2% 0;text-align: center;}
 #antwoord-juist-punten-mob{color:#fff;font-size: 20px;padding:0 4% 4% 0;text-align: center;}
 
+#filter-fout{background: rgba(236, 90, 72, 0.5);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 #vraag-uitslag-fout-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background: #F6325A;}
-#antwoord-cont-fout-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px; color:#fff;line-height: 50px;margin:0 0 0 4%;}
-#antwoord-fout-mob{color:#fff;font-size: 40px;padding:0 0 4% 0;}
+#antwoord-cont-fout-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px;line-height: 50px;margin:0 0 0 4%;}
+#antwoord-fout-mob{color:#fff;font-size: 40px;padding:0 4% 2% 0;text-align: center;}
 #antwoord-cont-fout-mob img {border-radius: 5px;width:96%;margin:4% 0 0 0;}
+
+#filter-intro{background: rgba(246, 50, 90, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}

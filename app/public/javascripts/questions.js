@@ -121,7 +121,6 @@ socket.on('render question', function(randomNum) {
             arr[arr.length] = randomnumber;
         }
     }
-
     angular.element(document).find('#qstn1').html(quiz[randomNum].answers[arr[0]].answer);
     angular.element(document).find('#qstn2').html(quiz[randomNum].answers[arr[1]].answer);
     angular.element(document).find('#qstn3').html(quiz[randomNum].answers[arr[2]].answer);
@@ -152,7 +151,7 @@ function startTimer() {
     angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#f6325a',
-        duration: 20000,
+        duration: 5000,
         text: {
             value: 20
         },
@@ -164,7 +163,6 @@ function startTimer() {
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
                 angular.element(document).find('#vraag-uitslag-mob').addClass('show');
                 checkAnswer();
-                //check of het goede antwoord is gegeven
             }
         }
     });
@@ -177,14 +175,13 @@ function onoff(id){
     selectedId = id;
 }
 
-//deze inzetten als de timer is afgelopen
 function checkAnswer() {
     if (angular.element(document).find('#' + selectedId).html() == quiz[randomNr].answers[3].answer) {
         angular.element(document).find('#vraag-uitslag-mob').addClass('show');
         correct = true;
         printGifSucces();
         //playersArray[playersArray.length].score++
-    } else {
+    }else {
         correct = false;
         printGifLoser();
         angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
