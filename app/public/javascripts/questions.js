@@ -5,21 +5,25 @@ var quiz = [
         answers: [
             {
                 answer: "Joachim Löw",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Louis van Gaal",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "José Mourinho",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
-            answer: "Jürgen Klopp",
-            uitleg: 'Jürgen Klopp werd bekend door zijn successen met Borussia Dortmund (2x de Bundesliga en een finaleplaats in de Champions League) en zijn opmerkelijke uitspraken.'+
+                answer: "Jürgen Klopp",
+                uitleg: 'Jürgen Klopp werd bekend door zijn successen met Borussia Dortmund (2x de Bundesliga en een finaleplaats in de Champions League) en zijn opmerkelijke uitspraken.'+
                     '<br><br>Klopp is sinds een jaar trainer bij Liverpool FC in Engeland en heeft er de bijnaam: "the normal one". Niet te verwarren met "the special one", José Mourinho.',
-            punten: true
+                punten: true,
+                rendered: false
             }
         ],
         picture: "<img src='http://e1.365dm.com/16/02/16-9/20/jurgen-klopp-liverpool-thumbs-up_3412823.jpg?20160208152020' height='100%' width='100%'/>",
@@ -31,20 +35,24 @@ var quiz = [
         answers: [
             {
                 answer: "Star Wars: The Two Towers",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Star Wars: The Deathly Hallows",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Star Wars: The Force Awakens",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Star Wars: Rogue One",
                 uitleg: '<iframe src="https://www.youtube.com/embed/Wji-BZ0oCwg" frameborder="0" allowfullscreen></iframe>',
-                punten: true
+                punten: true,
+                rendered: false
             }
         ],
         picture: "<img src='http://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/24/10/star-wars-rogue-one-cast.jpg' width='100%'/>",
@@ -56,27 +64,30 @@ var quiz = [
         answers: [
             {
                 answer: "Paul Elstak",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "DJ Jean",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Charly Lownoise",
-                punten: false
+                punten: false,
+                rendered: false
             },
             {
                 answer: "Mental Theo",
                 uitleg: "Theo Nabuurs ('s-Hertogenbosch, 14 februari 1965) is een Nederlandse videojockey en presentator die vooral bekend is als Mental Theo. Dit pseudoniem zou een bijnaam zijn die hij had gekregen vanwege zijn aparte manier van dansen in discotheken.",
-                punten: true
+                punten: true,
+                rendered: false
             }
         ],
         picture: "<img src='http://www.janvis.nl/wp-content/uploads/2013/03/mental-theo.jpg' width='100%'/>",
         enabled:true
     }
 ];
-
 socket.on('render question', function(randomNum) {
     //Desktop
     angular.element(document).find('#question').html(quiz[randomNum].question);
@@ -87,10 +98,22 @@ socket.on('render question', function(randomNum) {
 
     //Mobile
     angular.element(document).find('#question-nr-mob').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
-    angular.element(document).find('#qstn1').html(quiz[randomNum].answers[0].answer);
-    angular.element(document).find('#qstn2').html(quiz[randomNum].answers[1].answer);
-    angular.element(document).find('#qstn3').html(quiz[randomNum].answers[2].answer);
-    angular.element(document).find('#qstn4').html(quiz[randomNum].answers[3].answer);
+
+    var arr = [];
+
+    while(arr.length < 4){
+        var randomnumber=Math.floor(Math.random() * 4)
+        var found=false;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==randomnumber){found=true;break}
+        }
+        if(!found)arr[arr.length]=randomnumber;
+    }
+
+    angular.element(document).find('#qstn1').html(quiz[randomNum].answers[arr[0]].answer);
+    angular.element(document).find('#qstn2').html(quiz[randomNum].answers[arr[1]].answer);
+    angular.element(document).find('#qstn3').html(quiz[randomNum].answers[arr[2]].answer);
+    angular.element(document).find('#qstn4').html(quiz[randomNum].answers[arr[3]].answer);
 
     angular.element(document).find('#vraag-intro').addClass('animate');
     angular.element(document).find('#vraag-intro-mob').addClass('animate');

@@ -32,18 +32,16 @@
 
     <!--Antwoorden-->
     <div id="answers-mob-cont">
-        <button class="btn-style" value="0" id="qstn1" onclick="onoff()"></button>
+        <button class="btn-style" id="qstn1"></button>
         <button class="btn-style" id="qstn2"></button>
         <button class="btn-style" id="qstn3"></button>
         <button class="btn-style" id="qstn4"></button>
 
-        <!--<script type="text/javascript">
-            function onoff(){
-                if(angular.element(document).find('#qstn1').val() == 0){
-                    angular.element(document).find('#qstn1').val(value = 1)
-                }
+        <script type="text/javascript">
+            function onoff() {
+                angular.element(document).find('#qstn1').val();
             }
-        </script>-->
+        </script>
     </div>
 
     <!--Status-->

@@ -22,16 +22,16 @@ io.on('connection', function(socket) {
   //Sends the array of current player to any client that wants to join.
   socket.emit('update playerArray', players);
 
-  io.on('disconnect', function() {
-    socket.broadcast.emit('who is leaving');
-  });
-
-  socket.on('still here', function(playerNumber) {
-    if (playerNumber != null && playerNumber != undefined) {
-      inGame.push(players[playerNumber]);
-      console.log(inGame);
-    }
-  });
+  // io.on('disconnect', function() {
+  //   socket.broadcast.emit('who is leaving');
+  // });
+  //
+  // socket.on('still here', function(playerNumber) {
+  //   if (playerNumber != null && playerNumber != undefined) {
+  //     inGame.push(players[playerNumber]);
+  //     console.log(inGame);
+  //   }
+  // });
 
   socket.on('new user', function(playerNumber, user) {
 
