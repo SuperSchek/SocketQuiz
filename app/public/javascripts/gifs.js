@@ -1,4 +1,4 @@
-var winnerGifs = ["https://m.popkey.co/0b1935/qrOQG.gif", "https://m.popkey.co/6d9ceb/wrkk.gif", "http://i.giphy.com/5BgqPLsvG8dMI.gif"];
+var winnerGifs = ['../images/gifs/success/obama.gif', "../images/gifs/success/kim-jung-un.gif", "../images/gifs/success/pleased_king.gif"];
 var loserGifs = ["https://m.popkey.co/0b1935/qrOQG.gif", "https://m.popkey.co/6d9ceb/wrkk.gif"];
 
 function printGifSucces() {
