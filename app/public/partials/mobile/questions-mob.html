@@ -5,20 +5,38 @@
 </div>
 
 <div id="vraag-uitslag-mob" class="animateIn" >
+
+    <div id="filter" ></div>
+   <!-- <style>#vraag-uitslag-mob{background:url('https://m.popkey.co/6d9ceb/wrkk.gif')no-repeat right;background-size: cover;background-position-x:-340px;}</style>-->
+    <style>#vraag-uitslag-mob{background:url('https://m.popkey.co/0b1935/qrOQG.gif')no-repeat right;background-size: cover;background-position:0;}</style>
+
+    <script>
+        var succesArray = [links, naar, gifs];
+        var loserArray = [links, naar, gifs];
+
+        function pickSuccesGif() {
+            var gifNummer = Math.floor(Math.random() * 6);
+            angular.element(document).find('#vraag-uitslag-mob').html('<div style="background-image: url("' + succesArray[gifNummer] + '")">');
+        }
+
+        function pickLoserGif() {
+            var gifNummer = Math.floor(Math.random() * 6);
+            angular.element(document).find('#vraag-uitslag-mob').html('<div style="background-image: url("' + loserArray[gifNummer] + '")">');
+        }
+    </script>
+
     <div id="antwoord-cont-mob">
         <script></script>
-        <img src="../../images/nieuwcheckmark.gif"/>
         <div id="antwoord-juist-mob">Juist!</div>
         <div id="antwoord-juist-punten-mob">+1 punt</div>
     </div>
 </div>
-<!-- Zodra er een goed fout antwoord in zit kunnen we deze activeren
 <div id="vraag-uitslag-fout-mob" class="animateIn" >
     <div id="antwoord-cont-fout-mob">
         <div id="antwoord-fout-mob">Helaas...</div>
         <img src="https://m.popkey.co/18a679/4gl7D.gif"/>
     </div>
-</div>-->
+</div>
 
 
 <div id="mobile-cont">
