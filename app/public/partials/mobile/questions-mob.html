@@ -1,52 +1,34 @@
 <div id="vraag-intro-mob">
+    <div id="filter-intro" ></div>
+    <style>#vraag-intro-mob{background:url('https://m.popkey.co/f3a71a/VoMEq.gif')no-repeat right;background-size: cover;background-position-x:-420px;}</style>
     <div id="intro-text-mob">
         Wacht tot de beheerder het spel start...
     </div>
 </div>
 
 <div id="vraag-uitslag-mob" class="animateIn" >
-
     <div id="filter" ></div>
    <!-- <style>#vraag-uitslag-mob{background:url('https://m.popkey.co/6d9ceb/wrkk.gif')no-repeat right;background-size: cover;background-position-x:-340px;}</style>-->
     <style>#vraag-uitslag-mob{background:url('https://m.popkey.co/0b1935/qrOQG.gif')no-repeat right;background-size: cover;background-position:0;}</style>
-
-    <script>
-        var succesArray = [links, naar, gifs];
-        var loserArray = [links, naar, gifs];
-
-        function pickSuccesGif() {
-            var gifNummer = Math.floor(Math.random() * 6);
-            angular.element(document).find('#vraag-uitslag-mob').html('<div style="background-image: url("' + succesArray[gifNummer] + '")">');
-        }
-
-        function pickLoserGif() {
-            var gifNummer = Math.floor(Math.random() * 6);
-            angular.element(document).find('#vraag-uitslag-mob').html('<div style="background-image: url("' + loserArray[gifNummer] + '")">');
-        }
-    </script>
-
     <div id="antwoord-cont-mob">
         <script></script>
         <div id="antwoord-juist-mob">Juist!</div>
         <div id="antwoord-juist-punten-mob">+1 punt</div>
     </div>
 </div>
+
 <div id="vraag-uitslag-fout-mob" class="animateIn" >
+    <div id="filter-fout" ></div>
+    <style>#vraag-uitslag-fout-mob{background:url('https://m.popkey.co/28f35e/4M5AX.gif?c=desktop&p=popkey&i=mrw-reactions&l=search&f=.gif')no-repeat right;background-size: cover;background-position-x:-560px;}</style>
+
     <div id="antwoord-cont-fout-mob">
         <div id="antwoord-fout-mob">Helaas...</div>
-        <img src="https://m.popkey.co/18a679/4gl7D.gif"/>
     </div>
 </div>
 
-
 <div id="mobile-cont">
     <!--Timebar-->
-    <div id="time-mob-cont">
-        <div class="progress" id="progress"></div>
-    </div>
-
-    <!--Vraag
-    <div id="question-mob-cont"><div id="question-mob"></div></div>-->
+    <div id="time-mob-cont"><div class="progress" id="progress"></div></div>
     <div id="question-nr-mob-cont"><div id="question-nr-mob"></div></div>
 
     <!--Antwoorden-->
@@ -59,7 +41,7 @@
 
     <!--Status-->
     <div id="status-mob-cont">
-        <div id="points-cont"><div id="points">Je hebt 20 punten</div></div><!--op de 20 moet een var komen-->
+        <div id="points-cont"><div id="points">Je hebt 20 punten</div></div>
         <div id="position-cont"><div id="position">1e</div></div>
     </div>
 </div>
