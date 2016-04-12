@@ -1,5 +1,24 @@
+
 <div id="lobby" >
     <h1>Aanwezige spelers:</h1>
+    <script type="text/javascript">
+        setInterval(
+        function updatePlayers() {
+            var p = players.length
+            var htmStr = ""
+            for (i = 0; i < p; i++) {
+                if (i == 0) {
+                    htmlStr += "<ul>"
+                }
+                htmlStr += "<li>" + players[i].name + "</li>"
+                if (i == p) {
+                    htmlStr += "</ul>"
+                }
+            }
+            angular.document.find("#kolom1")
+            return htmlStr;
+        }, 10000)
+    </script>
 </div>
 <div id="btn-start-game"><button ng-click="setRoute('/desktop/quiz')" class="btn-start-agame hvr-fade">Start Quiz!</button></div>
 <div id="playerlist">
@@ -7,3 +26,34 @@
     <div id="kolom2">Hier komt de tweede rij spelers</div>
     <div id="kolom3">Hier komt de derde rij spelers</div>
 </div>
+
+
+
+<script type="text/javascript">
+    setInterval(
+            function updatePlayers() {
+                var p = playersArray.length;
+                var codeRij1 = "";
+                var codeRij2 = "";
+                var codeRij3 = "";
+
+
+                for (i = 0; i < p; i++) {
+                    if (i == 0) {codeRij1 += "<ul>"}
+                    if (i == 10) {codeRij2 += "<ul>"}
+                    if (i == 20) {codeRij3 += "<ul>"}
+
+                    if (i >= 0 && i < 10) {codeRij1 += "<li>" + playersArray[i].gebruikersnaam + "</li>"}
+                    if (i >= 10 && i < 20) {codeRij2 += "<li>" + playersArray[i].gebruikersnaam + "</li>"}
+                    if (i >= 20 && i <= 30) {codeRij3 += "<li>" + playersArray[i].gebruikersnaam + "</li>"}
+
+                    if (i == p || i == 9) {codeRij1 += "</ul>"}
+                    if (i == 19) {codeRij2 += "</ul>"}
+                    if (i == 30) {codeRij3 += "</ul>"}
+                }
+                angular.element(document).find('#kolom1').html(codeRij1);
+                angular.element(document).find('#kolom2').html(codeRij2);
+                angular.element(document).find('#kolom3').html(codeRij3);
+
+    }, 1000);
+</script>
