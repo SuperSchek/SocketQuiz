@@ -1,10 +1,10 @@
 <div id="welkom-cont-mob">
     <div id="welkom-login">Wat is je naam?</div>
-
+gi
     <div id="welkom-btn-mob">
-        <form>
-            <input id="welkom-btn-mob-text-veld" type="text"/>
-            <input class="btn-welkom-mob" type="submit" ng-click="setRoute('/mobile/quiz-mob')" value="Let's go!" onclick="send()"/>
+        <form name="myForm">
+            <input ng-model="gebruikersnaam" id="welkom-btn-mob-text-veld" type="text" ng-required="true" name="gebruikersnaam" ng-model="mytext" required/>
+            <input class="btn-welkom-mob" id="register" type="submit" value="Let's go!" onclick="send()" ng-click="setRoute('/mobile/quiz-mob')" ng-disabled="myForm.$invalid"/>
         </form>
     </div>
 </div>

@@ -1,12 +1,15 @@
 var playersArray = [];
 var playerNumber;
 
+
+// Knop uit totdat waarde in zit
 function send() {
+
     var username = $('#welkom-btn-mob-text-veld').val();
 
-    if (username == undefined) {
-        username = "Naam a.u.b.";
-    } else {
+    if (username == "") {
+        return;
+    }
         playerNumber = playersArray.length;
 
         socket.emit('new user', playerNumber, username = {
@@ -15,7 +18,6 @@ function send() {
             score : 0,
             id : playersArray.length
         });
-    }
 }
 
 socket.on('send array', function(players) {
