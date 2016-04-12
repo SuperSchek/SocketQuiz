@@ -6,8 +6,25 @@
 <script>
     var socket = io();
 
-    function send (username) {
-        socket.emit('new user');
-    }
+    io.sockets.on('connection', function (socket) {
+        function send (username) {
+            socket.emit('new user');
+            updateClients();
+        }
+
+        socket.on('disconnect', function () {
+            for(var i=0; i<players.length; i++) {
+                if(players[i] == socket.user) {
+                    delete players[players[i]];
+                }
+            }
+            updateClients();
+        });
+
+        function updateClients() {
+            io.sockets.emit('update', players);
+        }
+
+    });
 
 </script>
