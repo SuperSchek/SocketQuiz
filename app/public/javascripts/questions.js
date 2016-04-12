@@ -180,8 +180,9 @@ function checkAnswer() {
         angular.element(document).find('#vraag-uitslag-mob').addClass('show');
         correct = true;
         printGifSucces();
-        //playersArray[playersArray.length].score++
-    }else {
+        playersArray[playerNumber].score++;
+        socket.emit('send score', playersArray);
+    } else {
         correct = false;
         printGifLoser();
         angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');

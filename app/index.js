@@ -79,4 +79,10 @@ io.on('connection', function(socket) {
 
     io.sockets.emit('update quiz', serverQuiz);
   });
+
+  socket.on('send score', function(playersArray) {
+    players = playersArray;
+    // Emit new scores and update leaderboard
+    io.sockets.emit('update scores', players);
+  });
 });

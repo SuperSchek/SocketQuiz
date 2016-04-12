@@ -19,15 +19,27 @@ function send() {
 }
 
 socket.on('send array', function(players) {
-    playersArray = [];
     playersArray = players;
 });
 
 // When a new client connects, this makes sure they'll receive the latest array of players.
 socket.on('update playerArray', function(players) {
-    playersArray = [];
     playersArray = players;
 });
+
+socket.on('update scores', function(players) {
+    playersArray = players;
+
+    for (var p = 0; p < playersArray.length; p++) {
+        angular.element(document).find('#leaderboard').html('<div class="leaderboard-card">' +
+            playersArray[p].gebruikersnaam + '<div class="leaderboard-card-score">' +
+            playersArray[p].score + '</div></div>');
+    }
+});
+
+
+// <div id="leaderboard">
+//     <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
 
 socket.on('who is leaving', function() {
     socket.emit('still here', playerNumber);
