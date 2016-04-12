@@ -140,6 +140,8 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#antwoord-uitleg').removeClass('show');
     angular.element(document).find('#vraag-uitslag-mob').removeClass('show');
     angular.element(document).find('#vraag-uitslag-fout-mob').removeClass('show');
+    selectedId = undefined;
+    $("#mobile-cont #answers-mob-cont[role='group'] button").removeClass('on');
     startTimer();
 
 });
@@ -168,6 +170,7 @@ function startTimer() {
             if (bar.value() == 1){
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
+
                 if(vraagNr == quiz.length){
                     angular.element(document).find('#end-question').addClass('show');
                     angular.element(document).find('#end-question').removeClass('hidden');
@@ -181,7 +184,7 @@ function startTimer() {
 }
 
 function onoff(id){
-    selectedId = "";
+
     selectedAnswer = angular.element(document).find('#' + id).val();
     selectedId = id;
 }
