@@ -1,3 +1,4 @@
+
 <div id="lobby" >
     <h1>Aanwezige spelers:</h1>
 </div>
@@ -7,3 +8,23 @@
     <div id="kolom2">Hier komt de tweede rij spelers</div>
     <div id="kolom3">Hier komt de derde rij spelers</div>
 </div>
+
+
+
+<script type="text/javascript">
+    setInterval(
+            function updatePlayers() {
+                var p = playersArray.length;
+                var KAKKI = "";
+                for (i = 0; i < p; i++) {
+                    if (i == 0) {
+                        KAKKI += "<ul>"
+                    }
+                    KAKKI += "<li>" + playersArray[i].gebruikersnaam + "</li>"
+                    if (i == p) {
+                        KAKKI += "</ul>"
+                    }
+                }
+                angular.element(document).find('#kolom1').html(KAKKI);
+            }, 1000)
+</script>
