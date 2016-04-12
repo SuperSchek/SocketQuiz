@@ -1,9 +1,3 @@
-<!--<<<<<<< HEAD-->
-<!--<form id="login-form">-->
-    <!--<input id="uname" placeholder="Naam" type="text"/>-->
-    <!--<input id="submitUser" onclick="send()" type="submit"/>-->
-<!--</form>-->
-<!--=======-->
 <div id="welkom-cont-mob">
     <div id="welkom-login">Wat is je naam?</div>
 
@@ -14,29 +8,3 @@
         </form>
     </div>
 </div>
-
-<script>
-    var socket = io();
-
-    io.sockets.on('connection', function (socket) {
-        function send (username) {
-            socket.emit('new user');
-            updateClients();
-        }
-
-        socket.on('disconnect', function () {
-            for(var i=0; i<players.length; i++) {
-                if(players[i] == socket.user) {
-                    delete players[players[i]];
-                }
-            }
-            updateClients();
-        });
-
-        function updateClients() {
-            io.sockets.emit('update', players);
-        }
-
-    });
-
-</script>
