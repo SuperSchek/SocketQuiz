@@ -130,6 +130,7 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#qstn3').html(quiz[randomNum].answers[arr[2]].answer);
     angular.element(document).find('#qstn4').html(quiz[randomNum].answers[arr[3]].answer);
 
+    angular.element(document).find('#end-question').addClass('hidden');
     angular.element(document).find('#vraag-intro').addClass('animate');
     angular.element(document).find('#vraag-intro-mob').addClass('animate');
     angular.element(document).find('#vraag-intro-mob').addClass('hidden');
@@ -140,6 +141,7 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#vraag-uitslag-mob').removeClass('show');
     angular.element(document).find('#vraag-uitslag-fout-mob').removeClass('show');
     startTimer();
+
 });
 
 socket.on('update quiz', function(serverQuiz) {
@@ -166,6 +168,11 @@ function startTimer() {
             if (bar.value() == 1){
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
+                if(vraagNr == quiz.length){
+                    angular.element(document).find('#end-question').addClass('show');
+                    angular.element(document).find('#end-question').removeClass('hidden');
+                    angular.element(document).find('#antwoord-btn').addClass('hidden');
+                }
                 checkAnswer();
             }
         }
