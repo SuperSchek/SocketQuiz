@@ -1,6 +1,24 @@
 
 <div id="lobby" >
     <h1>Aanwezige spelers:</h1>
+    <script type="text/javascript">
+        setInterval(
+        function updatePlayers() {
+            var p = players.length
+            var htmStr = ""
+            for (i = 0; i < p; i++) {
+                if (i == 0) {
+                    htmlStr += "<ul>"
+                }
+                htmlStr += "<li>" + players[i].name + "</li>"
+                if (i == p) {
+                    htmlStr += "</ul>"
+                }
+            }
+            angular.document.find("#kolom1")
+            return htmlStr;
+        }, 10000)
+    </script>
 </div>
 <div id="btn-start-game"><button ng-click="setRoute('/desktop/quiz')" class="btn-start-agame hvr-fade">Start Quiz!</button></div>
 <div id="playerlist">
