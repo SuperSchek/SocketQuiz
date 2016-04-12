@@ -35,7 +35,7 @@ function printGifSucces() {
 
 function printGifLoser() {
     gifNr = 0;
-    gifNr = Math.floor(Math.random() * 3);
+    gifNr = Math.floor(Math.random() * 5);
     if (gifNr == 0) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[0] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-180px");
