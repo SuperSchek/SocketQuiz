@@ -1,7 +1,7 @@
 <div id="vraag-intro">
     <div id="intro-text">
         <h1>Klaar voor de eerste vraag?</h1>
-        <div id="btn-stelVraag"><button onclick="loadQuestion()" id="next-question" class="btn-stelVraag hvr-fade">Begin de quiz!</button></div>
+        <div id="btn-stelVraag"><button onclick="loadQuestion(), ophogen()" id="next-question" class="btn-stelVraag hvr-fade">Begin de quiz!</button></div>
     </div>
 </div>
 <div id="antwoord-uitleg" class="hidden animateIn" >
@@ -10,7 +10,7 @@
         <h2><div id="antwoord-titel"></div></h2>
         <div id="antwoord-text"></div>
     </div>
-    <div id="antwoord-btn"><div id="btn-volgendeVraag"><button onclick="loadQuestion()" id="next-question" class="btn-volgendeVraag hvr-fade">Volgende vraag</button></div></div>
+    <div id="antwoord-btn"><div id="btn-volgendeVraag"><button onclick="loadQuestion(), ophogen()" id="next-question" class="btn-volgendeVraag hvr-fade">Volgende vraag</button></div></div>
 </div>
 
 <div id="desktop-cont">
