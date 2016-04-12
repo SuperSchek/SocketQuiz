@@ -93,19 +93,23 @@ var selectedAnswer;
 var randomNr;
 var selectedId;
 var correct;
+var vraagNr = 0;
+function ophogen(){
+    vraagNr++
+}
 
 socket.on('render question', function(randomNum) {
     randomNr = randomNum;
 
     //Desktop
     angular.element(document).find('#question').html(quiz[randomNum].question);
-    angular.element(document).find('#question-nr').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
+    angular.element(document).find('#question-nr').html("vraag " + vraagNr + "/" + quiz.length);
     angular.element(document).find('#image').html(quiz[randomNum].picture);
     angular.element(document).find('#antwoord-titel').html(quiz[randomNum].answers[3].answer);
     angular.element(document).find('#antwoord-text').html(quiz[randomNum].answers[3].uitleg);
 
     //Mobile
-    angular.element(document).find('#question-nr-mob').html("vraag " + quiz[randomNum].questionNr + "/" + quiz.length);
+    angular.element(document).find('#question-nr-mob').html("vraag " + vraagNr + "/" + quiz.length);
 
     var arr = [];
 
