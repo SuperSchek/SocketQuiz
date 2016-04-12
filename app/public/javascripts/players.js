@@ -33,9 +33,8 @@ socket.on('update scores', function(players) {
     playersArray = players;
 
     for (var p = 0; p < playersArray.length; p++) {
-        angular.element(document).find('#leaderboard').html('<div class="leaderboard-card">' +
-            playersArray[p].gebruikersnaam + '<div class="leaderboard-card-score">' +
-            playersArray[p].score + '</div></div>');
+        angular.element(document).find('#leaderboard').html('<div class="lobby-card">' +
+            playersArray[p].gebruikersnaam + playersArray[p].score + '</div>');
     }
 });
 
