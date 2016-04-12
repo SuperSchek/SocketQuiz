@@ -156,3 +156,15 @@ iframe {width:100%;height: 400px;}
 
 #filter-fout{background: rgba(216, 45, 64, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 #filter-intro{background: rgba(246, 50, 90, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
+
+#security{z-index:102;position:absolute;margin:0 auto;text-align: center;height: 100%;width:100%;background: #F6325A;}
+#security-cont{position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;width:100%;}
+
+#input-security1 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security2 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security3 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security4 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+
+.btn-security{position:relative;width:20%;padding:1.5% 4% 1.5% 4%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-decoration: none;font-size: 28px;border-radius: 5px;}
+#security-button{float:left;width: 100%;height:100px;padding:2% 0 0 0;}
+#security-input{float:left;width:100%;}
