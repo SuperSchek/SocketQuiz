@@ -12,16 +12,12 @@ server.listen(port, function () {
 // Routing
 app.use(express.static(__dirname + '/public'));
 
-
-
 var players = [];
 var serverQuiz;
 
 var inGame = [];
 
 io.on('connection', function (socket) {
-
-  console.log('Client connected');
 
   socket.on('disconnect', function() {
     if (socket.username != undefined) {
