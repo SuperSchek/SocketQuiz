@@ -5,11 +5,6 @@ var server = require('http').createServer(app);
 var io = require('../')(server);
 var port = process.env.PORT || 3000;
 
-var players = [];
-var serverQuiz;
-
-var inGame = [];
-
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
 });
@@ -17,7 +12,34 @@ server.listen(port, function () {
 // Routing
 app.use(express.static(__dirname + '/public'));
 
-io.on('connection', function(socket) {
+
+
+var players = [];
+var serverQuiz;
+
+var inGame = [];
+
+io.on('connection', function (socket) {
+
+  console.log('Client connected');
+
+  socket.on('disconnect', function() {
+    if (socket.username != undefined) {
+      console.log(socket.username + ' left the array!');
+
+      var newArray = [];
+
+      for (var b = 0; b < players.length; b++) {
+        if (players[b].gebruikersnaam == socket.username) {
+          console.log('I\'m gonna remove ' + players[b].gebruikersnaam + ' from the game!');
+        } else {
+          newArray.push(players[b]);
+        }
+      }
+
+      console.log(newArray);
+    }
+  });
 
   //Sends the array of current player to any client that wants to join.
   socket.emit('update playerArray', players);
@@ -49,6 +71,8 @@ io.on('connection', function(socket) {
     console.log(user.gebruikersnaam + ' joined the game and is player ' + playerNumber);
 
     players.push(user);
+
+    socket.username = user.gebruikersnaam;
 
     io.sockets.emit('send array', players);
   });
