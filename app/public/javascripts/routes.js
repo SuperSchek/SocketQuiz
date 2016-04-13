@@ -54,5 +54,9 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
             url: "/desktop/eindstand",
             templateUrl: "../partials/desktop/eindscherm.html"
         })
+        .state('overzicht', {
+            url: "/desktop/overzicht",
+            templateUrl: "../partials/desktop/scoreoverzicht.html"
+        })
 });
 
