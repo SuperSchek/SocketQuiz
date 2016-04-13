@@ -6,18 +6,6 @@ var loserGifs = ["../images/gifs/loser/ramsay.gif", "https://m.popkey.co/9305c4/
 
 var gifNr;
 
-function preLoadGifs() {
-    for (var winGif = 0; winGif < winnerGifs.length; winGif++) {
-        angular.element(document).find('#vraag-uitslag-mob').css("background", "url(" + winnerGifs[winGif] + ")no-repeat right");
-        angular.element(document).find('#vraag-uitslag-mob').css("display", "none");
-    }
-
-    for (var loseGif = 0; loseGif < winnerGifs.length; loseGif++) {
-        angular.element(document).find('#vraag-uitslag-mob').css("background", "url(" + winnerGifs[loseGif] + ")no-repeat right");
-        angular.element(document).find('#vraag-uitslag-mob').css("display", "none");
-    }
-}
-
 function printGifSucces() {
     gifNr = 0;
     gifNr = Math.floor(Math.random() * 7);
