@@ -205,7 +205,7 @@ function checkAnswer() {
         correct = true;
         printGifSucces();
         playersArray[playerNumber].score++;
-        socket.emit('send score', playersArray);
+        socket.emit('this is my new score', playersArray, playerNumber);
     } else {
         correct = false;
         printGifLoser();
