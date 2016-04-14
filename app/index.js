@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('../')(server);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 4000;
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -43,7 +43,9 @@ io.on('connection', function (socket) {
 
   //When a logged in client leaves the game, update all playerNumbers
   socket.on('player shifted', function(data) {
-    console.log(socket.username + ' is now player ' + data);
+    if (socket.username != undefined && data != null) {
+      console.log(socket.username + ' is now player ' + data);
+    }
   });
 
   socket.on('question request', function(quiz) {
@@ -83,23 +85,32 @@ io.on('connection', function (socket) {
     socket.broadcast.emit('show endscreen mobile');
   });
 
-  socket.on('disconnect', function() {
+  socket.on('fresh login', function () {
     if (socket.username != undefined) {
-      console.log(socket.username + ' left the array!');
-
-      var newArray = [];
-
-      for (var b = 0; b < players.length; b++) {
-        if (players[b].gebruikersnaam == socket.username) {
-          console.log('Server: I\'m gonna remove ' + players[b].gebruikersnaam + ' from the game!');
-        } else {
-          newArray.push(players[b]);
-        }
-      }
-
-      players = newArray;
-
-      io.sockets.emit('update playerArray', players);
+      freshLogin();
     }
   });
+
+  socket.on('disconnect', function() {
+    if (socket.username != undefined) {
+      freshLogin();
+    }
+  });
+
+
+  function freshLogin() {
+    var newArray = [];
+
+    for (var b = 0; b < players.length; b++) {
+      if (players[b].gebruikersnaam == socket.username) {
+        console.log('Server: I\'m gonna remove ' + players[b].gebruikersnaam + ' from the game!');
+      } else {
+        newArray.push(players[b]);
+      }
+    }
+
+    players = newArray;
+
+    io.sockets.emit('update playerArray', players);
+  }
 });
