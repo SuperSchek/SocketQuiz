@@ -16,24 +16,19 @@ var players = [];
 var serverQuiz;
 
 io.on('connection', function (socket) {
-
   socket.on('new user', function(playerNumber, user) {
-
     // Check of naam al bestaat. For loop herhaald zich zoveel als er spelers zijn. als ingevulde 'uname' gelijk is aan
     // naam in objecten dan krijg je +1 achter de naam (jan1, jan2, jan3, enz.)
     for (i = 0; i < players.length; i++) {
       if (players[i].gebruikersnaam == user.gebruikersnaam) {
         user.gebruikersnaam = user.gebruikersnaam + Math.floor((Math.random() * 1000) + 1);
-
         //resetten zodat zoeken door arrays opnieuw gebeurt
         i = i-i;
       }
     }
-
     console.log(user.gebruikersnaam + ' joined the game and is player ' + user.id);
     players.push(user);
     socket.username = user.gebruikersnaam;
-
     socket.emit('you are', user);
     io.sockets.emit('send array', players);
   });
@@ -49,12 +44,11 @@ io.on('connection', function (socket) {
   });
 
   socket.on('question request', function(quiz) {
-    // Empty the serverQuiz array so we're ready to receive the next round.
+    // Empty the serverQuiz array so we're ready to receive the next round and Initialize numEnabled to 0..
     serverQuiz = [];
     serverQuiz = quiz;
-
-    // Initialize numEnabled to 0.
     var numEnabled = 0;
+
     // Set numEnabled to the total amount of questions left.
     // (questions with enabled set to true)
     for (var i = 0; i < serverQuiz.length; i++) {
@@ -66,20 +60,25 @@ io.on('connection', function (socket) {
     for (var j = 0; j < numEnabled; j++) {
       do { var randomNum = Math.floor(Math.random() * serverQuiz.length); }
       while (serverQuiz[randomNum].enabled == false);
-
       io.sockets.emit('render question', randomNum);
     }
-
     serverQuiz[randomNum].enabled = false;
-
     io.sockets.emit('update quiz', serverQuiz);
+
+    io.sockets.emit('please send me your scores');
   });
 
-  socket.on('request score update', function () {
-    for (var c = 0; c < players.length; c++) {
-      players[c]
+  socket.on('this is my new score', function(playersArray, playerNumber) {
+    if (players[playerNumber].gebruikersnaam != null && players[playerNumber].gebruikersnaam != undefined) {
+      console.log(players[playerNumber].gebruikersnaam + ' \'s new score is: ' + playersArray[playerNumber].score);
     }
   });
+
+  // socket.on('request score update', function () {
+  //   for (var c = 0; c < players.length; c++) {
+  //     players[c]
+  //   }
+  // });
 
   socket.on('end quiz', function(){
     socket.broadcast.emit('show endscreen mobile');
@@ -96,7 +95,6 @@ io.on('connection', function (socket) {
       freshLogin();
     }
   });
-
 
   function freshLogin() {
     var newArray = [];

@@ -42,3 +42,7 @@ socket.on('update playerArray', function(data) {
 
     socket.emit('player shifted', playerNumber);
 });
+
+socket.on('please send me your scores', function() {
+    socket.emit('this is my new score', playersArray, playerNumber);
+});
