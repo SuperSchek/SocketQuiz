@@ -64,21 +64,17 @@ io.on('connection', function (socket) {
     }
     serverQuiz[randomNum].enabled = false;
     io.sockets.emit('update quiz', serverQuiz);
-
-    io.sockets.emit('please send me your scores');
   });
 
   socket.on('this is my new score', function(playersArray, playerNumber) {
-    if (players[playerNumber].gebruikersnaam != null && players[playerNumber].gebruikersnaam != undefined) {
-      console.log(players[playerNumber].gebruikersnaam + ' \'s new score is: ' + playersArray[playerNumber].score);
+    if (players[playerNumber] != null || players[playerNumber] != undefined) {
+      console.log('Client says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + playersArray[playerNumber].score);
+
+      players[playerNumber].score = playersArray[playerNumber].score;
+
+      console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
     }
   });
-
-  // socket.on('request score update', function () {
-  //   for (var c = 0; c < players.length; c++) {
-  //     players[c]
-  //   }
-  // });
 
   socket.on('end quiz', function(){
     socket.broadcast.emit('show endscreen mobile');
