@@ -83,6 +83,10 @@ io.on('connection', function (socket) {
     io.sockets.emit('update scores', players);
   });
 
+  socket.on('end quiz', function(){
+    socket.broadcast.emit('show endscreen mobile');
+  });
+
   socket.on('disconnect', function() {
     if (socket.username != undefined) {
       console.log(socket.username + ' left the array!');

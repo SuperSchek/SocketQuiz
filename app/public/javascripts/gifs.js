@@ -39,17 +39,27 @@ function printGifLoser() {
     if (gifNr == 0) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[0] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-180px");
+        angular.element(document).find('#mijnscore-mob').css("background", "url(" + loserGifs[0] + ")no-repeat right");
+        angular.element(document).find('#mijnscore-mob').css("background-position-x", "-180px");
     } else if (gifNr == 1) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[1] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-75px");
+        angular.element(document).find('#mijnscore-mob').css("background", "url(" + loserGifs[1] + ")no-repeat right");
+        angular.element(document).find('#mijnscore-mob').css("background-position-x", "-75px");
     } else if (gifNr == 2) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[2] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-340px");
+        angular.element(document).find('#mijnscore-mob').css("background", "url(" + loserGifs[2] + ")no-repeat right");
+        angular.element(document).find('#mijnscore-mob').css("background-position-x", "-340px");
     } else if (gifNr == 3) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[3] + ")no-repeat right");
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-350px");
+        angular.element(document).find('#mijnscore-mob').css("background", "url(" + loserGifs[3] + ")no-repeat right");
+        angular.element(document).find('#mijnscore-mob').css("background-position-x", "-350px");
     } else if (gifNr == 4) {
         angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url(" + loserGifs[4] + ")no-repeat right");
-        angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-850px");
+        angular.element(document).find('#vraag-uitslag-fout-mob').css("background-position-x", "-650px");
+        angular.element(document).find('#mijnscore-mob').css("background", "url(" + loserGifs[4] + ")no-repeat right");
+        angular.element(document).find('#mijnscore-mob').css("background-position-x", "-650px");
     }
 }
