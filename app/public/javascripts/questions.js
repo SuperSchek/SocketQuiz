@@ -127,6 +127,7 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#qstn3').html(quiz[randomNum].answers[arr[2]].answer);
     angular.element(document).find('#qstn4').html(quiz[randomNum].answers[arr[3]].answer);
 
+    angular.element(document).find('#mijnscore-mob').addClass('hidden');
     angular.element(document).find('#end-question').addClass('hidden');
     angular.element(document).find('#vraag-intro').addClass('animate');
     angular.element(document).find('#vraag-intro-mob').addClass('animate');
@@ -184,6 +185,13 @@ function startTimer() {
 function onoff(id) {
     selectedAnswer = angular.element(document).find('#' + id).val();
     selectedId = id;
+}
+
+function endQuiz(){
+    angular.element(document).find('#mijnscore-mob').removeClass('hidden');
+    angular.element(document).find('#mijnscore-mob').addClass('show');
+    angular.element(document).find('#antwoord-uitleg').addClass('show');
+    angular.element(document).find('#antwoord-uitleg').removeClass('hiden');
 }
 
 function checkAnswer() {
