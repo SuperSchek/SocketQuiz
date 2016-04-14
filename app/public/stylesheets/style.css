@@ -144,7 +144,7 @@ iframe {width:100%;height: 400px;}
 #login-cont-mob{margin-top: 60%;height: 100%;min-width:100%;}
 #welkom-btn-mob-text-veld {font-family:AT;font-size:30px;color:#fff;background:rgba(0, 0, 0, 0.2);border:none;box-shadow: none;width:96%;padding: 7% 0 7% 4%;border-bottom:2px solid #fff;}
 
-#filter{background: rgba(157, 207, 78, 0.4);background-size: cover;position: fixed;left:0;right:0;height:100%;}
+.filter{background: rgba(157, 207, 78, 0.4);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 #vraag-uitslag-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
 #antwoord-cont-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px;line-height: 50px;margin:0 0 0 4%;}
 #antwoord-juist-mob{color:#fff;font-size: 40px;padding:0 4% 2% 0;text-align: center;}
@@ -194,7 +194,7 @@ h6{font-size: 26pt;color:#313131;padding:0 0 0 0;}
 /**** scoreoverzicht.html ****/
 #mijnscore-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
 .score-cont-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: center;font-size: 30px;line-height: 50px;margin:0 0 0 4%;color:#fff;}
-.score-text{position: absolute;margin-top:10%;color:#fff;text-align: center;width: 100%;font-size: 30px;line-height: 50px;}
+.score-text{position: absolute;margin-top:10%;color:#fff;text-align: center;width: 100%;font-size: 40px;line-height: 50px;}
 .score-mob{color:#fff;font-size: 80px;padding:0 4% 2% 0;text-align: center;}
 
 #mijnscore-eerste-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
