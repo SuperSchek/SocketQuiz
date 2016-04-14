@@ -93,10 +93,7 @@ var selectedAnswer;
 var randomNr;
 var selectedId;
 var correct;
-var vraagNr = 0;
-function ophogen(){
-    vraagNr++
-}
+var vraagNr = 1;
 
 socket.on('render question', function(randomNum) {
     randomNr = randomNum;
@@ -148,6 +145,7 @@ socket.on('render question', function(randomNum) {
 
 socket.on('update quiz', function(serverQuiz) {
     quiz = serverQuiz;
+    vraagNr++;
 });
 
 function loadQuestion() {
@@ -171,7 +169,7 @@ function startTimer() {
                 bar.setText("De tijd is om!");
                 angular.element(document).find('#antwoord-uitleg').addClass('show');
 
-                if(vraagNr == quiz.length){
+                if(vraagNr == quiz.length + 1){
                     angular.element(document).find('#end-question').addClass('show');
                     angular.element(document).find('#end-question').removeClass('hidden');
                     angular.element(document).find('#antwoord-btn').addClass('hidden');
@@ -183,8 +181,7 @@ function startTimer() {
     line.animate(1);
 }
 
-function onoff(id){
-
+function onoff(id) {
     selectedAnswer = angular.element(document).find('#' + id).val();
     selectedId = id;
 }

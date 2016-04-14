@@ -19,37 +19,8 @@ var inGame = [];
 
 io.on('connection', function (socket) {
 
-  socket.on('disconnect', function() {
-    if (socket.username != undefined) {
-      console.log(socket.username + ' left the array!');
-
-      var newArray = [];
-
-      for (var b = 0; b < players.length; b++) {
-        if (players[b].gebruikersnaam == socket.username) {
-          console.log('I\'m gonna remove ' + players[b].gebruikersnaam + ' from the game!');
-        } else {
-          newArray.push(players[b]);
-        }
-      }
-
-      console.log(newArray);
-    }
-  });
-
   //Sends the array of current player to any client that wants to join.
   socket.emit('update playerArray', players);
-
-  // io.on('disconnect', function() {
-  //   socket.broadcast.emit('who is leaving');
-  // });
-  //
-  // socket.on('still here', function(playerNumber) {
-  //   if (playerNumber != null && playerNumber != undefined) {
-  //     inGame.push(players[playerNumber]);
-  //     console.log(inGame);
-  //   }
-  // });
 
   socket.on('new user', function(playerNumber, user) {
 
@@ -64,11 +35,13 @@ io.on('connection', function (socket) {
       }
     }
 
-    console.log(user.gebruikersnaam + ' joined the game and is player ' + playerNumber);
+    console.log(user.gebruikersnaam + ' joined the game and is player ' + user.id);
 
     players.push(user);
 
     socket.username = user.gebruikersnaam;
+    
+    socket.emit('you are', user);
 
     io.sockets.emit('send array', players);
   });
@@ -104,5 +77,23 @@ io.on('connection', function (socket) {
     players = playersArray;
     // Emit new scores and update leaderboard
     io.sockets.emit('update scores', players);
+  });
+
+  socket.on('disconnect', function() {
+    if (socket.username != undefined) {
+      console.log(socket.username + ' left the array!');
+
+      var newArray = [];
+
+      for (var b = 0; b < players.length; b++) {
+        if (players[b].gebruikersnaam == socket.username) {
+          console.log('Server: I\'m gonna remove ' + players[b].gebruikersnaam + ' from the game!');
+        } else {
+          newArray.push(players[b]);
+        }
+      }
+
+      console.log(newArray);
+    }
   });
 });

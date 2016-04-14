@@ -1,6 +1,6 @@
 var playersArray = [];
+var clientObject;
 var playerNumber;
-
 
 // Knop uit totdat waarde in zit
 function send() {
@@ -18,6 +18,14 @@ function send() {
             score : 0,
             id : playersArray.length
         });
+}
+
+function findWithAttr(array, attr, value) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
 }
 
 socket.on('send array', function(players) {
@@ -38,14 +46,8 @@ socket.on('update scores', function(players) {
     }
 });
 
+findWithAttr('playerNumbers', 'gebruikersnaam', socket.username);
 
-// <div id="leaderboard">
-//     <div class="leaderboard-card">Walter White<div class="leaderboard-card-score">22pnt</div></div>
-
-socket.on('who is leaving', function() {
-    socket.emit('still here', playerNumber);
+socket.on('you are', function(user) {
+    clientObject = user;
 });
-
-function whosHere() {
-    socket.emit('still here', playerNumber);
-}
