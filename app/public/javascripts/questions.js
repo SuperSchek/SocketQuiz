@@ -144,13 +144,15 @@ socket.on('render question', function(randomNum) {
 
 });
 
-socket.on('update quiz', function(serverQuiz) {
-    quiz = serverQuiz;
-    vraagNr++;
+socket.on('show endscreen mobile', function(){
+    printGifLoser();
+    angular.element(document).find('#mijnscore-mob').removeClass('hidden');
+    angular.element(document).find('#mijnscore-mob').addClass('show');
 });
 
 function loadQuestion() {
     socket.emit('question request', quiz);
+    socket.emit('request score update');
 }
 
 function startTimer() {
@@ -191,11 +193,6 @@ function onoff(id) {
 function endQuiz(){
     socket.emit('end quiz');
 }
-socket.on('show endscreen mobile', function(){
-    printGifLoser();
-    angular.element(document).find('#mijnscore-mob').removeClass('hidden');
-    angular.element(document).find('#mijnscore-mob').addClass('show');
-});
 
 function checkAnswer() {
     if (angular.element(document).find('#' + selectedId).html() == quiz[randomNr].answers[3].answer) {
