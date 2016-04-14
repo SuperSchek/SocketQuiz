@@ -15,16 +15,7 @@ app.use(express.static(__dirname + '/public'));
 var players = [];
 var serverQuiz;
 
-var inGame = [];
-
 io.on('connection', function (socket) {
-
-  //Sends the array of current player to any client that wants to join.
-  socket.emit('update playerArray', players);
-
-  socket.on('player shifted', function(data) {
-    console.log(socket.username + ' is now player ' + data);
-  });
 
   socket.on('new user', function(playerNumber, user) {
 
@@ -40,14 +31,19 @@ io.on('connection', function (socket) {
     }
 
     console.log(user.gebruikersnaam + ' joined the game and is player ' + user.id);
-
     players.push(user);
-
     socket.username = user.gebruikersnaam;
 
     socket.emit('you are', user);
-
     io.sockets.emit('send array', players);
+  });
+
+  //Sends the array of current player to any client that wants to join.
+  socket.emit('update playerArray', players);
+
+  //When a logged in client leaves the game, update all playerNumbers
+  socket.on('player shifted', function(data) {
+    console.log(socket.username + ' is now player ' + data);
   });
 
   socket.on('question request', function(quiz) {
@@ -77,10 +73,10 @@ io.on('connection', function (socket) {
     io.sockets.emit('update quiz', serverQuiz);
   });
 
-  socket.on('send score', function(playersArray) {
-    players = playersArray;
-    // Emit new scores and update leaderboard
-    io.sockets.emit('update scores', players);
+  socket.on('request score update', function () {
+    for (var c = 0; c < players.length; c++) {
+      players[c]
+    }
   });
 
   socket.on('end quiz', function(){

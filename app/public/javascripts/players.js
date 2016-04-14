@@ -42,12 +42,3 @@ socket.on('update playerArray', function(data) {
 
     socket.emit('player shifted', playerNumber);
 });
-
-socket.on('update scores', function(players) {
-    playersArray = players;
-
-    for (var p = 0; p < playersArray.length; p++) {
-        angular.element(document).find('#leaderboard').html('<div class="lobby-card">' +
-            playersArray[p].gebruikersnaam + playersArray[p].score + '</div>');
-    }
-});
