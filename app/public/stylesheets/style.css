@@ -153,18 +153,17 @@ iframe {width:100%;height: 400px;}
 #vraag-uitslag-fout-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
 #antwoord-cont-fout-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px;line-height: 50px;margin:0 0 0 4%;}
 #antwoord-fout-mob{color:#fff;font-size: 40px;padding:0 4% 2% 0;text-align: center;}
-/*#antwoord-cont-fout-mob img {border-radius: 5px;width:96%;margin:4% 0 0 0;}*/
 
-#filter-fout{background: rgba(216, 45, 64, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
+.filter-fout{background: rgba(216, 45, 64, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 #filter-intro{background: rgba(246, 50, 90, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 
 #security{z-index:102;position:absolute;margin:0 auto;text-align: center;height: 100%;width:100%;background: #F6325A;}
 #security-cont{position:absolute;top: 50%;transform: translateY(-50%);margin:0 auto;text-align: center;width:100%;}
 
-#input-security1 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
-#input-security2 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
-#input-security3 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
-#input-security4 {position:relative;margin:0 auto;font-family:AT;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security1 {position:relative;font-family:AT sans-serif;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security2 {position:relative;font-family:AT sans-serif;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security3 {position:relative;font-family:AT sans-serif;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
+#input-security4 {position:relative;font-family:AT sans-serif;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
 
 .btn-security{position:relative;width:20%;padding:1.5% 4% 1.5% 4%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-decoration: none;font-size: 28px;border-radius: 5px;}
 #security-button{float:left;width: 100%;height:100px;padding:2% 0 0 0;}
@@ -193,7 +192,11 @@ h6{font-size: 26pt;color:#313131;padding:0 0 0 0;}
 #btn-score{position:absolute;width:10%;right:0;top:0;height: auto;margin:3% 4% 0 2%;z-index: 201;}
 
 /**** scoreoverzicht.html ****/
-#mijnscore-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;background:url('https://m.popkey.co/f3a71a/VoMEq.gif')no-repeat right;background-position-x:-420px;}
-#score-cont-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: center;font-size: 30px;line-height: 50px;margin:0 0 0 4%;color:#fff;}
-#score-text{position: absolute;margin-top:10%;color:#313131;text-align: center;width: 100%;font-size: 30px;line-height: 50px;}
-#score-mob{color:#fff;font-size: 80px;padding:0 4% 2% 0;text-align: center;}
+#mijnscore-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
+.score-cont-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: center;font-size: 30px;line-height: 50px;margin:0 0 0 4%;color:#fff;}
+.score-text{position: absolute;margin-top:10%;color:#fff;text-align: center;width: 100%;font-size: 30px;line-height: 50px;}
+.score-mob{color:#fff;font-size: 80px;padding:0 4% 2% 0;text-align: center;}
+
+#mijnscore-eerste-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
+#mijnscore-tweede-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
+#mijnscore-derde-mob{z-index:300;position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
