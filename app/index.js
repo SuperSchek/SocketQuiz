@@ -22,6 +22,10 @@ io.on('connection', function (socket) {
   //Sends the array of current player to any client that wants to join.
   socket.emit('update playerArray', players);
 
+  socket.on('player shifted', function(data) {
+    console.log(socket.username + ' is now player ' + data);
+  });
+
   socket.on('new user', function(playerNumber, user) {
 
     // Check of naam al bestaat. For loop herhaald zich zoveel als er spelers zijn. als ingevulde 'uname' gelijk is aan
@@ -40,7 +44,7 @@ io.on('connection', function (socket) {
     players.push(user);
 
     socket.username = user.gebruikersnaam;
-    
+
     socket.emit('you are', user);
 
     io.sockets.emit('send array', players);
@@ -93,7 +97,9 @@ io.on('connection', function (socket) {
         }
       }
 
-      console.log(newArray);
+      players = newArray;
+
+      io.sockets.emit('update playerArray', players);
     }
   });
 });

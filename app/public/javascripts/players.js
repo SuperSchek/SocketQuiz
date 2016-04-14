@@ -1,5 +1,5 @@
 var playersArray = [];
-var clientObject;
+var clientUsername;
 var playerNumber;
 
 // Knop uit totdat waarde in zit
@@ -18,6 +18,8 @@ function send() {
             score : 0,
             id : playersArray.length
         });
+
+    clientUsername = username.gebruikersnaam;
 }
 
 function findWithAttr(array, attr, value) {
@@ -33,8 +35,12 @@ socket.on('send array', function(players) {
 });
 
 // When a new client connects, this makes sure they'll receive the latest array of players.
-socket.on('update playerArray', function(players) {
-    playersArray = players;
+socket.on('update playerArray', function(data) {
+    playersArray = data;
+
+    playerNumber = findWithAttr(playersArray, 'gebruikersnaam', clientUsername);
+
+    socket.emit('player shifted', playerNumber);
 });
 
 socket.on('update scores', function(players) {
@@ -44,10 +50,4 @@ socket.on('update scores', function(players) {
         angular.element(document).find('#leaderboard').html('<div class="lobby-card">' +
             playersArray[p].gebruikersnaam + playersArray[p].score + '</div>');
     }
-});
-
-findWithAttr('playerNumbers', 'gebruikersnaam', socket.username);
-
-socket.on('you are', function(user) {
-    clientObject = user;
 });
