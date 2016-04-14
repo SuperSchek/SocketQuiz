@@ -153,7 +153,7 @@ iframe {width:100%;height: 400px;}
 #vraag-uitslag-fout-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;}
 #antwoord-cont-fout-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px;line-height: 50px;margin:0 0 0 4%;}
 #antwoord-fout-mob{color:#fff;font-size: 40px;padding:0 4% 2% 0;text-align: center;}
-#antwoord-cont-fout-mob img {border-radius: 5px;width:96%;margin:4% 0 0 0;}
+/*#antwoord-cont-fout-mob img {border-radius: 5px;width:96%;margin:4% 0 0 0;}*/
 
 #filter-fout{background: rgba(216, 45, 64, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
 #filter-intro{background: rgba(246, 50, 90, 0.6);background-size: cover;position: fixed;left:0;right:0;height:100%;}
@@ -185,10 +185,15 @@ h6{font-size: 26pt;color:#313131;padding:0 0 0 0;}
 #btn-eindscherm button:hover{background: #fff;color:#F6325A;}
 #end-question{margin:0 0 0 2%;width:40%;float:left;position: relative;}
 
+/**** eindscherm.html ****/
 #scoreoverzicht{z-index:100;position:relative;margin:0 auto;height: 100%;width:100%;background: #F6325A;}
 #score-titel{float:left;position: relative;margin:2% 0 0 2%;text-align: left;padding:25px;width:100%;z-index: 200;}
 #score-list{width:100%;height:100%;float:left;position: relative;}
-
 #kolom-score{width:50%;height:auto;position: relative;margin:0 auto;background: rgba(0,0,0,0.2);}
-
 #btn-score{position:absolute;width:10%;right:0;top:0;height: auto;margin:3% 4% 0 2%;z-index: 201;}
+
+/**** scoreoverzicht.html ****/
+#mijnscore-mob{position:absolute;margin:0 auto;height: 100%;width:100%;background-size: cover !important;background:url('https://m.popkey.co/f3a71a/VoMEq.gif')no-repeat right;background-position-x:-420px;}
+#score-cont-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: center;font-size: 30px;line-height: 50px;margin:0 0 0 4%;color:#fff;}
+#score-text{position: absolute;margin-top:10%;color:#313131;text-align: center;width: 100%;font-size: 30px;line-height: 50px;}
+#score-mob{color:#fff;font-size: 80px;padding:0 4% 2% 0;text-align: center;}
