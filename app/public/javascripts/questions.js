@@ -150,6 +150,11 @@ socket.on('show endscreen mobile', function(){
     angular.element(document).find('#mijnscore-mob').addClass('show');
 });
 
+socket.on('update quiz', function(serverQuiz) {
+    quiz = serverQuiz;
+    vraagNr++;
+});
+
 function loadQuestion() {
     socket.emit('question request', quiz);
     socket.emit('request score update');
