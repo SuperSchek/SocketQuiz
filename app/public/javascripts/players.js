@@ -1,3 +1,5 @@
+var socket = io();
+
 var playersArray = [];
 var clientUsername;
 var playerNumber;
@@ -22,14 +24,19 @@ function send() {
     clientUsername = username.gebruikersnaam;
 }
 
-//TODO Hier verdergaan!
 function leaderLoad() {
     var p = playersArray.length;
+    var cards = "";
 
     for (i = 0; i < p; i++) {
-        angular.element(document).find('#leaderboard-cont').append("<div class='leaderboard-card'>" + playersArray[i].gebruikersnaam + "<div class='leaderboard-card-score'>" + playersArray[i].score + "</div></div>");
+        if (i >= 0 && i < 10) {
+            cards += "<div class='leaderboard-card'>" + playersArray[i].gebruikersnaam + "<div class='leaderboard-card-score'>" + playersArray[i].score + "</div></div>";
+        }
     }
+    angular.element(document).find('#leaderboard').html(cards);
 }
+
+setInterval(leaderLoad, 1000);
 
 function findWithAttr(array, attr, value) {
     for(var i = 0; i < array.length; i += 1) {
@@ -54,5 +61,4 @@ socket.on('update playerArray', function(data) {
 
 socket.on('please send me your scores', function() {
     socket.emit('this is my new score', playersArray, playerNumber);
-    leaderLoad();
 });

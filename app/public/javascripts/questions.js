@@ -1,3 +1,5 @@
+var sockets = io();
+
 var quiz = [
     {
         question: "Wie is de coach op deze foto?",
@@ -183,7 +185,6 @@ function startTimer() {
                     angular.element(document).find('#antwoord-btn').addClass('hidden');
                 }
                 checkAnswer();
-
             }
         }
     });

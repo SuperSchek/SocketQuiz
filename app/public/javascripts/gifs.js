@@ -1,6 +1,6 @@
 var winnerGifs = ["../images/gifs/success/obama.gif", "../images/gifs/success/kim-jung-un.gif", "../images/gifs/success/pleased_king.gif",
                     "../images/gifs/success/bb-8.gif", "../images/gifs/success/joker.gif", "../images/gifs/success/claire.gif",
-                    "../images/gifs/success/liz-lemon.gif"];
+                    "../images/gifs/success/lizz-lemon.gif"];
 var loserGifs = ["../images/gifs/loser/ramsay.gif", "../images/gifs/loser/mourinho.gif", "../images/gifs/loser/taylor.gif",
                 "../images/gifs/loser/trump.gif", "../images/gifs/loser/dumbledore.gif", "../images/gifs/loser/putin.gif"];
 

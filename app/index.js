@@ -73,6 +73,8 @@ io.on('connection', function (socket) {
       players[playerNumber].score = playersArray[playerNumber].score;
 
       console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
+
+      socket.broadcast.emit('update playerArray', players);
     }
   });
 
