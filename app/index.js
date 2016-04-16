@@ -16,6 +16,31 @@ var players = [];
 var serverQuiz;
 
 io.on('connection', function (socket) {
+  //Sends the array of current player to any client that wants to join.
+  socket.emit('update playerArray', players);
+
+  socket.on('looking for quizmaster', function() {
+    if (players.length == 0) {
+      console.log('Nobody\'s here yet. You can be quizmaster.');
+      socket.emit('set quizmaster');
+    } else {
+      var hostPresent = false;
+      for (var pq = 0; pq < players.length; pq++) {
+        if (players[pq] != undefined) {
+          if (players[pq].host != true) {
+            console.log(players[pq].gebruikersnaam + ' is not the host.');
+          } else {
+            console.log(players[pq].gebruikersnaam + ' is currently the host.');
+            hostPresent = true;
+          }
+        }
+      }
+      if (hostPresent != true && socket.username == undefined) {
+        socket.emit('set quizmaster');
+      }
+    }
+  });
+
   socket.on('new user', function(playerNumber, user) {
     // Check of naam al bestaat. For loop herhaald zich zoveel als er spelers zijn. als ingevulde 'uname' gelijk is aan
     // naam in objecten dan krijg je +1 achter de naam (jan1, jan2, jan3, enz.)
@@ -32,9 +57,6 @@ io.on('connection', function (socket) {
     socket.emit('you are', user);
     io.sockets.emit('send array', players);
   });
-
-  //Sends the array of current player to any client that wants to join.
-  socket.emit('update playerArray', players);
 
   //When a logged in client leaves the game, update all playerNumbers
   socket.on('player shifted', function(data) {
