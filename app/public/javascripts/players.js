@@ -40,18 +40,18 @@ function send() {
     clientUsername = username.gebruikersnaam;
 }
 
-playerNumber = playersArray.length;
+// playerNumber = playersArray.length;
 
 function leaderLoad() {
     sortedPlayers = playersArray.sort(function(a, b){return b.score-a.score});
 
-    if (playersArray[playerNumber] != undefined && playersArray[playerNumber].host == false) {
-        for (var sp = 0; sp < playersArray.length; sp++) {
-            if (sortedPlayers[sp].gebruikersnaam == playersArray[playerNumber].gebruikersnaam) {
-                myPosition = sortedPlayers.indexOf(sortedPlayers[sp]);
-            }
-        }
-    }
+    // if (playersArray[playerNumber] != undefined && playersArray[playerNumber].host == false) {
+    //     for (var sp = 0; sp < playersArray.length; sp++) {
+    //         if (sortedPlayers[sp].gebruikersnaam == playersArray[playerNumber].gebruikersnaam) {
+    //             myPosition = sortedPlayers.indexOf(sortedPlayers[sp]);
+    //         }
+    //     }
+    // }
 
     var p = playersArray.length;
     var cards = "";
