@@ -43,7 +43,7 @@ function send() {
 // playerNumber = playersArray.length;
 
 function leaderLoad() {
-    sortedPlayers = playersArray.sort(function(a, b){return b.score-a.score});
+    // sortedPlayers = playersArray.sort(function(a, b){return b.score-a.score});
 
     // if (playersArray[playerNumber] != undefined && playersArray[playerNumber].host == false) {
     //     for (var sp = 0; sp < playersArray.length; sp++) {
