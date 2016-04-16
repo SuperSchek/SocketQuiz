@@ -142,8 +142,16 @@ socket.on('render question', function(randomNum) {
     angular.element(document).find('#vraag-uitslag-fout-mob').removeClass('show');
     selectedId = undefined;
     $("#mobile-cont #answers-mob-cont[role='group'] button").removeClass('on');
+
     startTimer();
 
+    var myScore;
+    if (playersArray[playerNumber].score == 1) {
+        myScore = "Je hebt " + playersArray[playerNumber].score + " punt";
+    } else {
+        myScore = "Je hebt " + playersArray[playerNumber].score + " punten";
+    }
+    angular.element(document).find('#points').html(myScore);
 });
 
 socket.on('show endscreen mobile', function(){
@@ -207,6 +215,7 @@ function checkAnswer() {
         printGifSucces();
         playersArray[playerNumber].score++;
         socket.emit('this is my new score', playersArray, playerNumber);
+        
     } else {
         correct = false;
         printGifLoser();

@@ -55,22 +55,14 @@ function leaderLoad() {
 
     var p = playersArray.length;
     var cards = "";
-    var myScore = "";
-
     for (i = 0; i < p; i++) {
         if (playersArray[i].host != true) {
             if (i >= 0 && i < 10) {
                 cards += "<div class='leaderboard-card'>" + playersArray[i].gebruikersnaam + "<div class='leaderboard-card-score'>" + playersArray[i].score + "</div></div>";
-                if (playersArray[i].score == 1) {
-                    myScore = "Je hebt " + playersArray[i].score + " punt";
-                } else {
-                    myScore = "Je hebt " + playersArray[i].score + " punten";
-                }
             }
         }
     }
     angular.element(document).find('#leaderboard').html(cards);
-    angular.element(document).find('#points').html(myScore);
 }
 
 setInterval(leaderLoad, 1000);
