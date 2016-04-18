@@ -89,8 +89,9 @@ h5{color:#313131;font-size:16px;}
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {background-color: #fff;color: #F6325A;}
 
 #lobby{float:left;position: relative;margin:2% 0 0 2%;text-align: left;padding:25px;}
-#playerlist{width:100%;height:100%;float:left;position: relative;padding:0 0 0 2%;}
-#kolom1{width:100%;height:auto;float:left;position: relative;margin:0 0 0 0;}
+#playerlist{width:100%;height:100%;float:left;position:relative;padding:0 0 0 2%;margin-bottom:-100%;}
+#kolom1{width:100%;height:68%;float:left;position:relative;overflow:scroll;margin-bottom:10%;background: green;}
+
 #btn-start-game{position:fixed;right:0;width:20%; height: auto;margin:4% 4% 0 2%;}
 .btn-start-agame{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 
@@ -100,11 +101,10 @@ h5{color:#313131;font-size:16px;}
 #vraag-intro-mob{z-index:100;position:absolute;margin:0 auto;height: 100%;width:100%;background: #F6325A;}
 #intro-text-mob{position:relative;top: 50%;transform: translateY(-50%);text-align: left;font-size: 40px; color:#fff;line-height: 50px;margin:0 0 4% 4%;}
 
-#btn-stelVraag{margin:0 auto;position:relative;width:20%;height: auto;}
+#btn-stelVraag{margin:0 auto;position:relative;width:20%;height: 90px;}
 .btn-stelVraag{line-height:80px;padding:1%;width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 .hidden{display: none;}
-.show{display: block;
-    z-index: 101;}
+.show{display: block;z-index: 101;}
 
 #antwoord-uitleg{z-index:100;position:absolute;margin:0 auto;height: 100%;width:70%;background: #fff;}
 #antwoord-container{float:left;position: relative;margin:2% 0 0 2%;text-align: left;padding:25px;}
@@ -162,7 +162,7 @@ iframe {width:100%;height: 400px;}
 #input-security4 {position:relative;font-family:AT sans-serif;font-size:60px;color:#F6325A;background:#fff;border:none;box-shadow: none;width:100px;height:100px;text-align:center;margin:0 10px 0 10px;}
 
 .btn-security{position:relative;width:20%;padding:1.5% 4% 1.5% 4%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;text-decoration: none;font-size: 28px;border-radius: 5px;}
-#security-button{float:left;width: 100%;height:100px;padding:2% 0 0 0;}
+#security-button{float:left;width: 100%;height:70px;padding:2% 0 0 0;}
 #security-input{float:left;width:100%;}
 
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {background:#F6325A!important;color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.4);}
