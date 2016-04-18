@@ -4,10 +4,9 @@
 <div id="btn-start-game"><button ng-click="securityCheck('quiz')" class="btn-start-agame hvr-fade">Start Quiz!</button></div>
 <div id="playerlist">
     <div id="kolom1"></div>
-    <div id="kolom2"></div>
-    <div id="kolom3"></div>
 </div>
-
+<!--add players easy, mag eruit als we niet meer hoeven testen
+for (var i=0;i<25;i++){playersArray.push({gebruikersnaam:"Hoi"});}-->
 <script type="text/javascript">
     setInterval(
             function updatePlayers() {
@@ -17,7 +16,6 @@
                         actualPlayers.push(playersArray[ap]);
                     }
                 }
-
                 var p = actualPlayers.length;
                 var codeRij1 = "";
 
@@ -29,6 +27,5 @@
                     if (i == p) {codeRij1 += "</ul>"}
                 }
                 angular.element(document).find('#kolom1').html(codeRij1);
-
     }, 1000);
 </script>
