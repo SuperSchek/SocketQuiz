@@ -35,20 +35,19 @@ function send() {
             gebruikersnaam : username,
             host : false,
             score : 0,
+            position : "# ",
             id : playersArray.length
         });
 
     clientUsername = username.gebruikersnaam;
 }
 
-// playerNumber = playersArray.length;
-
 function leaderLoad() {
     var p = sortedArray.length;
     var cards = "";
     for (i = 0; i < p; i++) {
         if (i >= 0 && i < 10) {
-            cards += "<div class='leaderboard-card'>" + sortedArray[i].id + ". " + sortedArray[i].gebruikersnaam + "<div class='leaderboard-card-score'>" + sortedArray[i].score + "</div></div>";
+            cards += "<div class='leaderboard-card'>" + sortedArray[i].position + sortedArray[i].gebruikersnaam + "<div class='leaderboard-card-score'>" + sortedArray[i].score + "</div></div>";
         }
     }
     angular.element(document).find('#leaderboard').html(cards);
@@ -80,40 +79,12 @@ socket.on('update playerArray', function(data) {
     playerNumber = findWithAttr(playersArray, 'gebruikersnaam', clientUsername);
 
     socket.emit('player shifted', playerNumber);
+});
 
-    sortedArray = [];
-    for (var spa = 0; spa < playersArray.length; spa++) {
-        if (playersArray[spa].gebruikersnaam != "host") {
-            sortedArray.push(playersArray[spa])
-        }
-    }
-
-    sortedArray.sort(function (a, b) {
-        return b.score-a.score
-    });
-
-    // console.log("playersArray:");
-    
-    // console.log("sortedPlayers:");
-    // console.log(sortedPlayers);
-
-    // if (playersArray[playerNumber] != undefined && playersArray[playerNumber].host == false) {
-    //     for (var sp = 0; sp < playersArray.length; sp++) {
-    //         if (sortedPlayers[sp].gebruikersnaam == playersArray[playerNumber].gebruikersnaam) {
-    //             myPosition = sortedPlayers.indexOf(sortedPlayers[sp]);
-    //         }
-    //     }
-    // }
+socket.on('update positions', function(data) {
+    sortedArray = data;
 });
 
 socket.on('please send me your scores', function() {
     socket.emit('this is my new score', playersArray, playerNumber);
-});
-
-
-// var sortedPlayers = playersArray;
-console.log(playersArray);
-
-playersArray.sort(function (a, b) {
-    return b.score-a.score
 });

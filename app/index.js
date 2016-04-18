@@ -13,6 +13,7 @@ server.listen(port, function () {
 app.use(express.static(__dirname + '/public'));
 
 var players = [];
+var sortedClients = [];
 var serverQuiz;
 
 io.on('connection', function (socket) {
@@ -90,13 +91,34 @@ io.on('connection', function (socket) {
 
   socket.on('this is my new score', function(playersArray, playerNumber) {
     if (players[playerNumber] != null || players[playerNumber] != undefined) {
-      // console.log('Client says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + playersArray[playerNumber].score);
-
       players[playerNumber].score = playersArray[playerNumber].score;
 
-      // console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
+      var sortedArray = [];
+      for (var spa = 0; spa < playersArray.length; spa++) {
+        if (playersArray[spa].gebruikersnaam != "host") {
+          sortedArray.push(playersArray[spa])
+        }
+      }
 
+      sortedArray.sort(function (a, b) {
+        return b.score-a.score
+      });
+
+      if (playersArray[playerNumber] != undefined && playersArray[playerNumber].host == false) {
+        for (var sp = 0; sp < playersArray.length; sp++) {
+          if (sortedArray[sp] != undefined) {
+            if (sortedArray[sp].gebruikersnaam == playersArray[playerNumber].gebruikersnaam) {
+              myPosition = sortedArray.indexOf(sortedArray[sp]) + 1;
+              playersArray[playerNumber].position = myPosition;
+              sortedArray[sp].position = myPosition + ". ";
+            }
+          }
+        }
+      }
+
+      io.sockets.emit('update positions', sortedArray);
       io.sockets.emit('update playerArray', players);
+      
     }
   });
 
