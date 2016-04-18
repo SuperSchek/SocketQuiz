@@ -62,5 +62,13 @@ socketQuiz.config(function($stateProvider, $urlRouterProvider){
             url: "/desktop/access-denied",
             templateUrl: "../partials/desktop/access_denied.html"
         })
+        .state('unlock', {
+            url: "/desktop/unlock",
+            templateUrl: "../partials/desktop/unlock.html"
+        })
+        .state('start', {
+            url: "/desktop/start",
+            templateUrl: "../partials/desktop/startScreen.html"
+        })
 });
 
