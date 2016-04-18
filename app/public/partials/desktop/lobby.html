@@ -20,24 +20,15 @@
 
                 var p = actualPlayers.length;
                 var codeRij1 = "";
-                var codeRij2 = "";
-                var codeRij3 = "";
 
                 for (i = 0; i < p; i++) {
                     if (i == 0) {codeRij1 += "<ul>"}
-                    if (i == 10) {codeRij2 += "<ul>"}
-                    if (i == 20) {codeRij3 += "<ul>"}
 
-                    if (i >= 0 && i < 10) {codeRij1 += "<li>" + actualPlayers[i].gebruikersnaam + "</li>"}
-                    if (i >= 10 && i < 20) {codeRij2 += "<li>" + actualPlayers[i].gebruikersnaam + "</li>"}
-                    if (i >= 20 && i <= 30) {codeRij3 += "<li>" + actualPlayers[i].gebruikersnaam + "</li>"}
+                    if (i >= 0) {codeRij1 += "<li>" + actualPlayers[i].gebruikersnaam + "</li>"}
 
-                    if (i == p || i == 9) {codeRij1 += "</ul>"}
-                    if (i == 19) {codeRij2 += "</ul>"}
-                    if (i == 30) {codeRij3 += "</ul>"}
+                    if (i == p) {codeRij1 += "</ul>"}
                 }
                 angular.element(document).find('#kolom1').html(codeRij1);
-                angular.element(document).find('#kolom2').html(codeRij2);
-                angular.element(document).find('#kolom3').html(codeRij3);
+
     }, 1000);
 </script>
