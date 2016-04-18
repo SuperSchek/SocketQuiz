@@ -175,7 +175,7 @@ function startTimer() {
     // Hiermee voorkomen we dat de laadbalk vol is bij de start van het aftellen.
     angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
-        color: '#f6325a',
+        color: '#F6325A',
         duration: 20000,
         text: {
             value: 20
@@ -222,3 +222,22 @@ function checkAnswer() {
         angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
     }
 }
+
+function doOnOrientationChange()
+{
+    switch(window.orientation)
+    {
+        case -90:
+            document.getElementById("landscape").style.display="block";
+            break;
+        case 90:
+            document.getElementById("landscape").style.display="block";
+            break;
+        default:
+            document.getElementById("landscape").style.display="none";
+            break;
+    }
+}
+
+//Listen to orientation change
+window.addEventListener('orientationchange', doOnOrientationChange);
