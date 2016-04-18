@@ -90,13 +90,13 @@ io.on('connection', function (socket) {
 
   socket.on('this is my new score', function(playersArray, playerNumber) {
     if (players[playerNumber] != null || players[playerNumber] != undefined) {
-      console.log('Client says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + playersArray[playerNumber].score);
+      // console.log('Client says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + playersArray[playerNumber].score);
 
       players[playerNumber].score = playersArray[playerNumber].score;
 
-      console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
+      // console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
 
-      socket.broadcast.emit('update playerArray', players);
+      io.sockets.emit('update playerArray', players);
     }
   });
 
