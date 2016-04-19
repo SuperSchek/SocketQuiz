@@ -77,8 +77,8 @@ var quiz = [
                 rendered: false
             },
             {
-                answer: "Application Program Interface",
-                uitleg: "Hier de uitleg",
+                answer: "Juist Application Program Interface",
+                uitleg: 'Hier de uitleg',
                 punten: true,
                 rendered: false
             }
@@ -106,7 +106,7 @@ var quiz = [
             },
             {
                 answer: "Application Program Interface",
-                uitleg: "Hier de uitleg",
+                uitleg: 'Hier de uitleg',
                 punten: true,
                 rendered: false
             }
@@ -218,6 +218,7 @@ function startTimer() {
                     angular.element(document).find('#antwoord-btn').addClass('hidden');
                 }
                 checkAnswer();
+                selectedAnswer = undefined;
             }
         }
     });
@@ -228,14 +229,19 @@ var timeScore;
 var scored;
 
 function onoff(id) {
-    selectedAnswer = angular.element(document).find('#' + id).val();
-    selectedId = id;
-    timeScore = angular.element(document).find('.progressbar-text').html().substr(0, 2);
-    scored = parseInt(timeScore);
+
+    if (angular.element(document).find('#' + id).val() != selectedAnswer) {
+        selectedAnswer = angular.element(document).find('#' + id).val();
+        selectedId = id;
+        timeScore = angular.element(document).find('.progressbar-text').html().substr(0, 2);
+        scored = parseInt(timeScore);
+        angular.element(document).find('#antwoord-juist-punten-mob').html("+" + scored + " punten");
+    }
 }
 
 function endQuiz(){
     socket.emit('end quiz');
+    angular.element(document).find('.score-mob').html('TEST');
 }
 
 function checkAnswer() {
