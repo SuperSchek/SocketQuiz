@@ -13,6 +13,7 @@ server.listen(port, function () {
 app.use(express.static(__dirname + '/public'));
 
 var players = [];
+var sortedArrayServer = [];
 var serverQuiz;
 
 io.on('connection', function (socket) {
@@ -90,17 +91,12 @@ io.on('connection', function (socket) {
 
   socket.on('this is my new score', function(playersArray, playerNumber) {
     if (players[playerNumber] != null || players[playerNumber] != undefined) {
-      // console.log('Client says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + playersArray[playerNumber].score);
-
       players[playerNumber].score = playersArray[playerNumber].score;
-
-      // console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
-
       io.sockets.emit('update playerArray', players);
     }
   });
 
-  socket.on('end quiz', function(){
+  socket.on('end quiz', function() {
     socket.broadcast.emit('show endscreen mobile');
   });
 
@@ -114,6 +110,44 @@ io.on('connection', function (socket) {
     if (socket.username != undefined) {
       freshLogin();
     }
+  });
+
+  socket.on('this is my position', function(playersArray) {
+    players = playersArray;
+    io.sockets.emit('update playerArray', players);
+  });
+
+  socket.on('sort scores server', function() {
+    sortedArrayServer = [];
+    for (var spa = 0; spa < players.length; spa++) {
+      if (players[spa].gebruikersnaam != "host") {
+        sortedArrayServer.push(players[spa]);
+      }
+    }
+
+    sortedArrayServer.sort(function (a, b) {
+      return b.score-a.score
+    });
+    // console.log('Here are the sorted players:');
+    // console.log(sortedArrayServer);
+
+    for (var sp = 0; sp < sortedArrayServer.length; sp++) {
+      // console.log(sortedArrayServer[sp].gebruikersnaam);
+      // console.log('Hardcode: ');
+      // console.log(sortedArrayServer.indexOf(sortedArrayServer[sp]));
+
+      sortedArrayServer[sp].position = sortedArrayServer.indexOf(sortedArrayServer[sp]) + 1;
+      // console.log('Object: ');
+      // console.log(sortedArrayServer[sp].position);
+    }
+
+    // for (var tt = 0; tt < sortedArrayServer.length; tt++) {
+    //   console.log('Outside loop:');
+    //   console.log(sortedArrayServer[tt].gebruikersnaam);
+    //   console.log(sortedArrayServer[tt].position);
+    // }
+
+    io.sockets.emit('i ranked the players', sortedArrayServer);
   });
 
   function freshLogin() {

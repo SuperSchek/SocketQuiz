@@ -170,13 +170,15 @@ socket.on('render question', function(randomNum) {
 
     startTimer();
 
-    var myScore;
-    if (playersArray[playerNumber].score == 1) {
-        myScore = "Je hebt " + playersArray[playerNumber].score + " punt";
-    } else {
-        myScore = "Je hebt " + playersArray[playerNumber].score + " punten";
+    if (playersArray != undefined) {
+        var myScore;
+        if (playersArray[playerNumber] != undefined && playersArray[playerNumber].score == 1) {
+            myScore = "Je hebt " + playersArray[playerNumber].score + " punt";
+        } else {
+            myScore = "Je hebt " + playersArray[playerNumber].score + " punten";
+        }
+        angular.element(document).find('#points').html(myScore);
     }
-    angular.element(document).find('#points').html(myScore);
 });
 
 socket.on('show endscreen mobile', function(){
@@ -256,6 +258,7 @@ function checkAnswer() {
         correct = false;
         printGifLoser();
         angular.element(document).find('#vraag-uitslag-fout-mob').addClass('show');
+        socket.emit('this is my new score', playersArray, playerNumber);
     }
 }
 
