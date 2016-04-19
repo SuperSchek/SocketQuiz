@@ -1,6 +1,10 @@
 var app = angular.module('socket-quiz');
 
 app.controller('mainController', function($scope, $location, socket) {
+    $scope.hans = function() {
+        $scope.setRoute('/desktop/start');
+    };
+
     $scope.setRoute = function(route) {
         $location.path(route);
     };
@@ -18,10 +22,6 @@ app.controller('mainController', function($scope, $location, socket) {
             console.log('You ain\'t no host!');
             $scope.setRoute('/desktop/access-denied');
         }
-    };
-
-    $scope.doorKlikker = function() {
-        $scope.setRoute('/desktop/start');
     };
 });
 
