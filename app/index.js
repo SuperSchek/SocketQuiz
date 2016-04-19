@@ -97,6 +97,7 @@ io.on('connection', function (socket) {
       // console.log('Server says: ' + players[playerNumber].gebruikersnaam + '\'s new score is: ' + players[playerNumber].score);
 
       io.sockets.emit('update playerArray', players);
+      io.sockets.emit('calculate positions');
     }
   });
 
@@ -114,6 +115,11 @@ io.on('connection', function (socket) {
     if (socket.username != undefined) {
       freshLogin();
     }
+  });
+
+  socket.on('this is my position', function(playersArray) {
+    players = playersArray;
+    io.sockets.emit('update playerArray', players);
   });
 
   function freshLogin() {
