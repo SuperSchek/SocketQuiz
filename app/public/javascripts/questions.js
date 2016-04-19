@@ -121,6 +121,8 @@ var randomNr;
 var selectedId;
 var correct;
 var vraagNr = 1;
+var timeScore;
+var scored;
 
 socket.on('render question', function(randomNum) {
     randomNr = randomNum;
@@ -183,8 +185,19 @@ socket.on('render question', function(randomNum) {
 
 socket.on('show endscreen mobile', function(){
     printGifLoser();
-    angular.element(document).find('#mijnscore-mob').removeClass('hidden');
-    angular.element(document).find('#mijnscore-mob').addClass('show');
+    if (playersArray[playerNumber].position == 1) {
+        angular.element(document).find('#mijnscore-eerste-mob').removeClass('hidden');
+        angular.element(document).find('#mijnscore-eerste-mob').addClass('show');
+    } else if (playersArray[playerNumber].position == 2) {
+        angular.element(document).find('#mijnscore-tweede-mob').removeClass('hidden');
+        angular.element(document).find('#mijnscore-tweede-mob').addClass('show');
+    } else if (playersArray[playerNumber].position == 3) {
+        angular.element(document).find('#mijnscore-derde-mob').removeClass('hidden');
+        angular.element(document).find('#mijnscore-derde-mob').addClass('show');
+    } else if (playersArray[playerNumber].position > 3) {
+        angular.element(document).find('#mijnscore-mob').removeClass('hidden');
+        angular.element(document).find('#mijnscore-mob').addClass('show');
+    }
 });
 
 socket.on('update quiz', function(serverQuiz) {
@@ -227,9 +240,6 @@ function startTimer() {
     line.animate(1);
 }
 
-var timeScore;
-var scored;
-
 function onoff(id) {
 
     if (angular.element(document).find('#' + id).val() != selectedAnswer) {
@@ -253,7 +263,6 @@ function checkAnswer() {
         printGifSucces();
         playersArray[playerNumber].score += scored;
         socket.emit('this is my new score', playersArray, playerNumber);
-
     } else {
         correct = false;
         printGifLoser();

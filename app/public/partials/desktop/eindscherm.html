@@ -6,7 +6,15 @@
         <h1>De winnaar is...</h1>
     </div>
     <div id="intro-text">
-        <h4>Mental Theo</h4>
-        <h6>met 22 punten</h6>
+        <h4 id="winnaarName"></h4>
+        <h6 id="winaarScore"></h6>
     </div>
 </div>
+
+<script>
+    function renderWinnaar() {
+        angular.element(document).find('#winnaarName').html(sortedArrayClient[0].gebruikersnaam);
+        angular.element(document).find('#winaarScore').html("met " + sortedArrayClient[0].score + " punten");
+    }
+    renderWinnaar();
+</script>

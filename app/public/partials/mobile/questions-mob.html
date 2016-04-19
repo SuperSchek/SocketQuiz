@@ -29,6 +29,14 @@
     <div class="score-cont-mob">
         <div class="score-mob"></div>
     </div>
+    <script>
+        function loserPositions() {
+            if (playersArray[playerNumber].position > 3) {
+                angular.element(document).find('.score-mob').html(playersArray[playerNumber].position + "e");
+            }
+        }
+        loserPositions();
+    </script>
 </div>
 
 <div id="mijnscore-eerste-mob" class="animateIn hidden" >
@@ -81,3 +89,7 @@
         <div id="position-cont"><div id="position">1e</div></div>
     </div>
 </div>
+
+<script>
+    setInterval(findMyPosition, 1000);
+</script>

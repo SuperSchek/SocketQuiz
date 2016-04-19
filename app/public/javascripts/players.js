@@ -62,6 +62,15 @@ function leaderLoad() {
 
 setInterval(leaderLoad, 1000);
 
+function findMyPosition() {
+    for (var w = 0; w < sortedArrayClient.length; w++) {
+        if (sortedArrayClient[w].id == playersArray[playerNumber].id) {
+            playersArray[playerNumber].position = sortedArrayClient[w].position;
+        }
+    }
+    angular.element(document).find('#position').html(playersArray[playerNumber].position + "e");
+}
+
 function findWithAttr(array, attr, value) {
     for(var i = 0; i < array.length; i += 1) {
         if(array[i][attr] === value) {
