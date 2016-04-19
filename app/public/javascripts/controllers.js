@@ -1,6 +1,10 @@
 var app = angular.module('socket-quiz');
 
 app.controller('mainController', function($scope, $location, socket) {
+    $scope.hans = function() {
+        $scope.setRoute('/desktop/start');
+    };
+
     $scope.setRoute = function(route) {
         $location.path(route);
     };
@@ -20,9 +24,6 @@ app.controller('mainController', function($scope, $location, socket) {
         }
     };
 
-    $scope.doorKlikker = function() {
-        $scope.setRoute('/desktop/start');
-    };
 });
 
 app.config(['$compileProvider', function ($compileProvider) {

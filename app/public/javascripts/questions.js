@@ -201,12 +201,12 @@ function startTimer() {
     angular.element(document).find('#progress').html('');
     var line = new ProgressBar.Line('#progress', {
         color: '#F6325A',
-        duration: 20000,
+        duration: 15000,
         text: {
             value: 20
         },
         step: function(state, bar) {
-            var nummer = Math.abs(((20 * bar.value())-20).toFixed(0));
+            var nummer = Math.abs(((15 * bar.value())-15).toFixed(0));
             bar.setText( nummer + " seconden");
             if (bar.value() == 1){
                 bar.setText("De tijd is om!");
@@ -224,9 +224,14 @@ function startTimer() {
     line.animate(1);
 }
 
+var timeScore;
+var scored;
+
 function onoff(id) {
     selectedAnswer = angular.element(document).find('#' + id).val();
     selectedId = id;
+    timeScore = angular.element(document).find('.progressbar-text').html().substr(0, 2);
+    scored = parseInt(timeScore);
 }
 
 function endQuiz(){
@@ -238,9 +243,9 @@ function checkAnswer() {
         angular.element(document).find('#vraag-uitslag-mob').addClass('show');
         correct = true;
         printGifSucces();
-        playersArray[playerNumber].score++;
+        playersArray[playerNumber].score += scored;
         socket.emit('this is my new score', playersArray, playerNumber);
-        
+
     } else {
         correct = false;
         printGifLoser();
