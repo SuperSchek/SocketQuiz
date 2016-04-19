@@ -19,6 +19,10 @@ app.controller('mainController', function($scope, $location, socket) {
             $scope.setRoute('/desktop/access-denied');
         }
     };
+
+    $scope.doorKlikker = function() {
+        $scope.setRoute('/desktop/start');
+    };
 });
 
 app.config(['$compileProvider', function ($compileProvider) {

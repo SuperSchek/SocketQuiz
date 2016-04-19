@@ -16,7 +16,7 @@
     });
     function checkSecurity() {
         if (angular.element(document).find('#input-security1').val() == 1 && angular.element(document).find('#input-security2').val() == 2 && angular.element(document).find('#input-security3').val() == 3 && angular.element(document).find('#input-security4').val() == 4) {
-            angular.element(document).find('#security-button').html('<input class="btn-security" type="submit" value="Correct" ng-click="setRoute( \' /desktop/start \');"/> ');
+            angular.element(document).find('#security-button').html('<input class="btn-security" type="submit" value="Correct" onclick="doorKlikker()"/>');
         }
     }
 </script>

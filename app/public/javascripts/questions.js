@@ -2,91 +2,116 @@ var sockets = io();
 
 var quiz = [
     {
-        question: "Wie is de coach op deze foto?",
-        questionNr:1,
+        question: "Wat doet de volgende code:",
         answers: [
             {
-                answer: "Joachim Löw",
+                answer: "De app schalen",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Louis van Gaal",
+                answer: "Afbeelding opschuiven",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "José Mourinho",
+                answer: "Afbeelding roteren",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Jürgen Klopp",
+                answer: "Oriëntatie checken",
                 uitleg: 'Jürgen Klopp werd bekend door zijn successen met Borussia Dortmund (2x de Bundesliga en een finaleplaats in de Champions League) en zijn opmerkelijke uitspraken.'+
                     '<br><br>Klopp is sinds een jaar trainer bij Liverpool FC in Engeland en heeft er de bijnaam: "the normal one". Niet te verwarren met "the special one", José Mourinho.',
                 punten: true,
                 rendered: false
             }
         ],
-        picture: "<img src='http://e1.365dm.com/16/02/16-9/20/jurgen-klopp-liverpool-thumbs-up_3412823.jpg?20160208152020' height='100%' width='100%'/>",
+        picture: "<img src='../images/code1.png' width='100%' height='100%' />",
         enabled:true
     },
     {
-        question: "Wat is de naam van de eerst volgende Star Wars film?",
-        questionNr:2,
+        question: "Van welk framework is dit het logo?",
         answers: [
             {
-                answer: "Star Wars: The Two Towers",
+                answer: "Applescript",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Star Wars: The Deathly Hallows",
+                answer: "Actionscript",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Star Wars: The Force Awakens",
+                answer: "API",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Star Wars: Rogue One",
-                uitleg: '<iframe src="https://www.youtube.com/embed/Wji-BZ0oCwg" frameborder="0" allowfullscreen></iframe>',
+                answer: "AngularJS",
+                uitleg: 'Angular',
                 punten: true,
                 rendered: false
             }
         ],
-        picture: "<img src='http://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/24/10/star-wars-rogue-one-cast.jpg' width='100%'/>",
+        picture: "<img src='../images/alogo.png' width='100%'/>",
         enabled:true
     },
     {
-        question: "Wie is deze DJ?",
-        questionNr:3,
+        question: "Waarvan is API de afkorting?",
         answers: [
             {
-                answer: "Paul Elstak",
+                answer: "Application Protocol Interface",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "DJ Jean",
+                answer: "Application Program Interaction",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Charly Lownoise",
+                answer: "Application Protocol Interaction",
                 punten: false,
                 rendered: false
             },
             {
-                answer: "Mental Theo",
-                uitleg: "Theo Nabuurs ('s-Hertogenbosch, 14 februari 1965) is een Nederlandse videojockey en presentator die vooral bekend is als Mental Theo. Dit pseudoniem zou een bijnaam zijn die hij had gekregen vanwege zijn aparte manier van dansen in discotheken.",
+                answer: "Application Program Interface",
+                uitleg: "Hier de uitleg",
                 punten: true,
                 rendered: false
             }
         ],
-        picture: "<img src='http://www.janvis.nl/wp-content/uploads/2013/03/mental-theo.jpg' width='100%'/>",
+        picture: "<img src='../images/api.png' width='100%'/>",
+        enabled:true
+    },
+    {
+        question: "--",
+        answers: [
+            {
+                answer: "Application Protocol Interface",
+                punten: false,
+                rendered: false
+            },
+            {
+                answer: "Application Program Interaction",
+                punten: false,
+                rendered: false
+            },
+            {
+                answer: "Application Protocol Interaction",
+                punten: false,
+                rendered: false
+            },
+            {
+                answer: "Application Program Interface",
+                uitleg: "Hier de uitleg",
+                punten: true,
+                rendered: false
+            }
+        ],
+        picture: "<img src='../images/api.png' width='100%'/>",
         enabled:true
     }
 ];
@@ -239,5 +264,4 @@ function doOnOrientationChange()
     }
 }
 
-//Listen to orientation change
 window.addEventListener('orientationchange', doOnOrientationChange);
