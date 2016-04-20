@@ -204,8 +204,6 @@ socket.on('show endscreen mobile', function(){
 socket.on('update quiz', function(serverQuiz) {
     quiz = serverQuiz;
     vraagNr++;
-
-
 });
 
 function loadQuestion() {
