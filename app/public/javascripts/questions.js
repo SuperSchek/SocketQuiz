@@ -189,7 +189,7 @@ var quiz = [
             },
             {
                 answer: "Avatar",
-                uitleg: '<img src="../images/avatar.png" width="100%"/><br>Met $2,787,965,087 is Avatar de best verdienende film ooit.',
+                uitleg: '<img src="../images/avatar.png" width="100%"/><br><br>Met $2,787,965,087 is Avatar de best verdienende film ooit.',
                 punten: true,
                 rendered: false
             }
