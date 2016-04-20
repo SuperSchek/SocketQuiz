@@ -235,11 +235,6 @@ function startTimer() {
                     angular.element(document).find('#antwoord-btn').addClass('hidden');
                 }
                 checkAnswer();
-                selectedAnswer = undefined;
-                if (selectedAnswer == undefined) {
-                    angular.element(document).find('#antwoord-fout-mob').html("Wordt eens wakker!");
-                    angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url('https://m.popkey.co/5846c8/8MRWl.gif')no-repeat right");
-                }
             }
         }
     });
@@ -260,7 +255,7 @@ function onoff(id) {
 
 function endQuiz(){
     socket.emit('end quiz');
-    angular.element(document).find('.score-mob').html('TEST');
+    angular.element(document).find('.score-mob').html('');
 }
 
 function checkAnswer() {
