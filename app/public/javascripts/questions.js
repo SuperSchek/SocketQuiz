@@ -401,10 +401,7 @@ function startTimer() {
                     angular.element(document).find('#antwoord-btn').addClass('hidden');
                 }
                 checkAnswer();
-<<<<<<< HEAD
-=======
                 selectedAnswer = undefined;
->>>>>>> 1d4fb41c0d40f156599b8f8125dd3f7bed05fa82
             }
         }
     });
