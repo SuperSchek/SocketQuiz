@@ -197,6 +197,7 @@ socket.on('show endscreen mobile', function(){
     } else if (playersArray[playerNumber].position > 3) {
         angular.element(document).find('#mijnscore-mob').removeClass('hidden');
         angular.element(document).find('#mijnscore-mob').addClass('show');
+        loserPositions();
     }
 });
 
