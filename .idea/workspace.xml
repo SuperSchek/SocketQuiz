@@ -2,83 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4aafca2-6afc-4335-ac04-1b685f723959" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/History.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Procfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter-Condensed.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter-CondensedBold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter-CondensedLight.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/fonts/AmericanTypewriter.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/alogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/api.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/code1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/crown.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/cookiemonster.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/drake.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/dumbledore.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/mourinho.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/putin.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/ramsay.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/taylor.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/loser/trump.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/bb-8.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/claire.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/joker.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/kim-jung-un.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/leo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/lizz-lemon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/obama.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/pengu.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/pleased_king.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/gifs/success/psych.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/nieuwcheckmark.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/images/test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/controllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/gifs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/lib/jquery-1.12.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/lib/progressbar/progressbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/lib/progressbar/progressbar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/lib/progressbar/progressbar.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/players.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/questions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/javascripts/services.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/access_denied.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/eindscherm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/lobby.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/questionContent.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/scoreoverzicht.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/startScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/unlock.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktop/vraagbumper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/desktopPartial.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/mobile/login-mob.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/mobile/questions-mob.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/mobile/welkom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/partials/mobilePartial.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/stylesheets/animate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/public/stylesheets/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/client.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/namespace.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/socket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/big.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/big.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/fixtures/server-close.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/socket.io.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/support/doge.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SocketQuiz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -306,24 +230,24 @@
       <workItem from="1461079129739" duration="15089000" />
       <workItem from="1461166955107" duration="646000" />
       <workItem from="1461168247258" duration="3080000" />
-      <workItem from="1461171351929" duration="219000" />
+      <workItem from="1461171351929" duration="302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83677000" />
+    <option name="totallyTimeSpent" value="83760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24811219" sideWeight="0.50421494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40021574" sideWeight="0.49578503" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40021574" sideWeight="0.49578503" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
