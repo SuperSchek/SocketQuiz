@@ -188,6 +188,8 @@ socket.on('show endscreen mobile', function(){
 socket.on('update quiz', function(serverQuiz) {
     quiz = serverQuiz;
     vraagNr++;
+
+
 });
 
 function loadQuestion() {
@@ -219,6 +221,10 @@ function startTimer() {
                 }
                 checkAnswer();
                 selectedAnswer = undefined;
+                if (selectedAnswer == undefined) {
+                    angular.element(document).find('#antwoord-fout-mob').html("Wordt eens wakker!");
+                    angular.element(document).find('#vraag-uitslag-fout-mob').css("background", "url('https://m.popkey.co/5846c8/8MRWl.gif')no-repeat right");
+                }
             }
         }
     });
@@ -237,6 +243,7 @@ function onoff(id) {
         scored = parseInt(timeScore);
         angular.element(document).find('#antwoord-juist-punten-mob').html("+" + scored + " punten");
     }
+
 }
 
 function endQuiz(){

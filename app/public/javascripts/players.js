@@ -21,6 +21,7 @@ socket.on('set quizmaster', function() {
     });
 });
 
+
 // Knop uit totdat waarde in zit
 function send() {
 
@@ -52,6 +53,12 @@ function leaderLoad() {
         }
     }
     angular.element(document).find('#leaderboard').html(cards);
+
+    if(playersArray.length == 1){
+        angular.element(document).find("#btn-start-game").css("display", "none");
+    }else{
+        angular.element(document).find("#btn-start-game").css("display", "block");
+    }
 }
 
 setInterval(leaderLoad, 1000);
