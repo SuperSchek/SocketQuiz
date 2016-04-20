@@ -103,11 +103,6 @@ socket.on('please send me your scores', function() {
 });
 
 socket.on('calculate positions', function() {
-
-
-
-    
-    
     socket.emit('this is my position', playersArray);
 });
 
