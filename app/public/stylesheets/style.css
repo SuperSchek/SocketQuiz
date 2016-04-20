@@ -22,7 +22,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 
 /*  answers  */
 .btn-style{-webkit-appearance:none;line-height:27px;width:100%;height:20%;max-width:100%;font-family: "AT-Bold",sans-serif;background-color: #F6325A;border: 2pt solid #fff;color: white;margin:0 0 5% 0;text-align: center;text-decoration: none;display: inline-block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
-.on  { background:#fff;color: #F6325A; }
+.on{background:#fff;color: #F6325A;}
 #answers-mob-cont{max-width:90%;width:100%;max-height:100%;height:77%;padding: 0 5% 0 5%;float:left;position: relative;word-wrap: break-word;}
 
 
@@ -43,6 +43,8 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 .leaderboard-card, #kolom1 ul li, #kolom2 ul li, #kolom3 ul li{font-family:"AT",sans-serif;background:#fff; height:auto;max-width:100%;position:relative;padding:20px 20px 20px 20px;box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);color:#313131;text-align:left;margin-bottom: 20px;overflow: hidden;border-radius: 5px;}
 .leaderboard-card-score, #kolom1 ul li, #kolom2 ul li, #kolom3 ul li {font-family:"AT-Bold",sans-serif;text-align: right;float:right;position: relative;}
 .lobby-card, #kolom1 ul li, #kolom2 ul li, #kolom3 ul li {font-size:20px;margin:0 2% 2% 0;width:27%;font-family:"AT",sans-serif;background:#fff; height:auto;float:left;position:relative;box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);color:#313131;text-align:left;margin-bottom: 20px;overflow: hidden;border-radius: 5px;}
+
+#answers-mob-cont button:hover {background: #fff;color:#F6325A;}
 
 /*  quiz + roomname  */
 #room-cont{width:70%;height:auto;position:relative;font-size: 26px;float:left; color:#313131;}
@@ -113,7 +115,7 @@ h5{color:#313131;font-size:16px;}
 #antwoord-text{position:relative;color:#313131;font-family: "AT", sans-serif;font-size: 30px;line-height: 40px;padding-right:2%;}
 #antwoord-btn{margin:0 0 0 2%;width:40%;float:left;position: relative;}
 #btn-volgendeVraag{position:relative;height: auto;padding:25px;width:100%;}
-.btn-volgendeVraag{line-height:80px;padding:0% 10%;font-family: "AT-Bold",sans-serif;background-color: #fff;border: 2pt solid #F6325A;color: #F6325A;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
+.btn-volgendeVraag{line-height:80px;padding:0 10%;font-family: "AT-Bold",sans-serif;background-color: #fff;border: 2pt solid #F6325A;color: #F6325A;text-align: center;text-decoration: none;display: block;font-size: 28px;border-radius: 5px;float:left;position:relative;}
 #btn-volgendeVraag button:hover{background: #F6325A;color:#fff;}
 
 .animate{-webkit-animation: uitFaden 0.5s;-webkit-animation-iteration-count: 1;-webkit-animation-timing-function:ease-in-out;-webkit-animation-fill-mode: forwards;}
@@ -201,8 +203,8 @@ h6{font-size: 26pt;color:#313131;padding:0 0 0 0;}
 
 #landscape{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     background:url('https://m.popkey.co/c92db9/mzO8X.gif')no-repeat right;background-size: cover;
 
     width: 100%;
