@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    $('#input-security1').keyup(function() {
+        if(this.value.length == $(this).attr('maxlength')) {
+            $('#input-security2').focus();
+        }
+    });
+    $('#input-security2').keyup(function() {
+        if(this.value.length == $(this).attr('maxlength')) {
+            $('#input-security3').focus();
+        }
+    });
+    $('#input-security3').keyup(function() {
+        if(this.value.length == $(this).attr('maxlength')) {
+            $('#input-security4').focus();
+        }
+    });
+    function checkSecurity() {
+        if (angular.element(document).find('#input-security1').val() == 1 && angular.element(document).find('#input-security2').val() == 2 && angular.element(document).find('#input-security3').val() == 3 && angular.element(document).find('#input-security4').val() == 4) {
+            //angular.element(document).find('#security-button').html('<input class="btn-security" type="submit" value="Correct" onclick="doorKlikker()"/>');
+        }
+    }
+</script>
+
+<div id="security">
+    <div id="security-cont">
+        <form>
+            <div id="security-input">
+                <input id="input-security1" size="1" tabindex="1" maxlength="1" class="input-security" type="password"/>
+                <input id="input-security2" size="1" tabindex="1" maxlength="1" class="input-security" type="password"/>
+                <input id="input-security3" size="1" tabindex="1" maxlength="1" class="input-security" type="password"/>
+                <input id="input-security4" size="1" tabindex="1" maxlength="1" class="input-security" type="password"/>
+            </div>
+            <div id="security-button">
+                <input class="btn-security" type="submit" value="Unlock" onclick="checkSecurity()"/>
+<<<<<<< HEAD
+=======
+                <input class="btn-security" type="submit" value="Correct" onclick="hans();"/>
+>>>>>>> 434f4e1d034ad3940c92e3f079300b83e58a5e5d
+            </div>
+        </form>
+    </div>
+</div>

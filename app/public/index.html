@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="socket-quiz">
+  <head>
+    <title>SocketQuiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta charset="UTF-8">
+    <script src="javascripts/lib/jquery-1.12.3.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/animate.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body onload="doOnOrientationChange();">
+    <div id="landscape"><div class="filter-intro" ></div><div>Draai je mobiel om verder te spelen!</div></div>
+    <div ng-controller="mainController" class="test">
+      <div ui-view class="test animpje"></div>
+    </div>
+
+    <!--!!!!BELANGRIJK!!!!-->
+    <!--DE VOLGORDE WAAROP DE SCRIPTS GELADEN WORDEN IS BELANGRIJK-->
+
+    <!-- Socket.IO -->
+    <script src="socket.io/socket.io.js"></script>
+    <!-- Angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <!-- Angular Routes | Handles platform detection -->
+    <script src="javascripts/routes.js"></script>
+
+    <script type="text/javascript" src="javascripts/services.js"></script>
+    <script type="text/javascript" src="javascripts/controllers.js"></script>
+
+    <script type="text/javascript" src="javascripts/players.js"></script>
+    <script type="text/javascript" src="javascripts/questions.js"></script>
+    <script type="text/javascript" src="javascripts/gifs.js"></script>
+
+    <script type="text/javascript" src="javascripts/lib/progressbar/progressbar.min.js"></script>
+  </body>
+</html>

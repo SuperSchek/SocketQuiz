@@ -1,0 +1,16 @@
+<div id="login-cont-mob">
+    <div class="welkom-content-cont">
+        <div id="welkom-login">Wat is je naam?</div>
+
+        <div id="welkom-btn-mob">
+            <form name="myForm">
+                <input ng-model="gebruikersnaam" id="welkom-btn-mob-text-veld" type="text" ng-required="true" name="gebruikersnaam" ng-model="mytext" required/>
+                <input class="btn-welkom-mob" id="register" type="submit" value="Let's go!" onclick="send()" ng-click="setRoute('/mobile/quiz-mob')" ng-disabled="myForm.$invalid"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    socket.emit('fresh login');
+</script>

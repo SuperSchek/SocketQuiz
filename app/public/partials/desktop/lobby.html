@@ -1,0 +1,33 @@
+
+<div id="lobby" >
+    <h1>Aanwezige spelers:</h1>
+    <h3>socketquiz.herokuapp.com</h3>
+</div>
+<div id="btn-start-game"><button ng-click="securityCheck('quiz')" class="btn-start-agame hvr-fade">Start Quiz!</button></div>
+<div id="playerlist">
+    <div id="kolom1"></div>
+</div>
+<!--add players easy, mag eruit als we niet meer hoeven testen
+for (var i=0;i<25;i++){playersArray.push({gebruikersnaam:"Hoi"});}-->
+<script type="text/javascript">
+    setInterval(
+            function updatePlayers() {
+                var actualPlayers = [];
+                for (var ap = 0; ap < playersArray.length; ap++) {
+                    if (playersArray[ap].host != true) {
+                        actualPlayers.push(playersArray[ap]);
+                    }
+                }
+                var p = actualPlayers.length;
+                var codeRij1 = "";
+
+                for (i = 0; i < p; i++) {
+                    if (i == 0) {codeRij1 += "<ul>"}
+
+                    if (i >= 0) {codeRij1 += "<li>" + actualPlayers[i].gebruikersnaam + "</li>"}
+
+                    if (i == p) {codeRij1 += "</ul>"}
+                }
+                angular.element(document).find('#kolom1').html(codeRij1);
+    }, 1000);
+</script>
