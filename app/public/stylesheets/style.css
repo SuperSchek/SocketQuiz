@@ -44,7 +44,7 @@ body{background:#F6325A;margin:0;font-family: "AT-Bold", Arial, sans-serif;max-h
 .leaderboard-card-score, #kolom1 ul li, #kolom2 ul li, #kolom3 ul li {font-family:"AT-Bold",sans-serif;text-align: right;float:right;position: relative;}
 .lobby-card, #kolom1 ul li, #kolom2 ul li, #kolom3 ul li {font-size:20px;margin:0 2% 2% 0;width:27%;font-family:"AT",sans-serif;background:#fff; height:auto;float:left;position:relative;box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);color:#313131;text-align:left;margin-bottom: 20px;overflow: hidden;border-radius: 5px;}
 
-#answers-mob-cont button:hover {background: #fff;color:#F6325A;}
+/*#answers-mob-cont button:hover {background: #fff;color:#F6325A;}*/
 
 /*  quiz + roomname  */
 #room-cont{width:70%;height:auto;position:relative;font-size: 26px;float:left; color:#313131;}
