@@ -75,7 +75,7 @@ html button:focus {outline:none;}
 
 h1{font-family: "AT-Bold", sans-serif;color:#fff; font-size: 72px;padding:0 0 2% 0;line-height: 72px;}
 h2{font-family: "AT-Bold", sans-serif;color:#F6325A; font-size: 72px;padding:0 0 4% 0;line-height: 72px;}
-h3{font-family: "AT-Bold", sans-serif;color:inherit; font-size: 18px;padding:0 0 4% 0;line-height: 1em;}
+h3{font-family: "AT-Bold", sans-serif;color:inherit; font-size: 22px;padding:0 0 4% 0;line-height: 1em;}
 h5{color:#313131;font-size:16px;}
 #welkom{float:left;position: relative;margin:2% 0 0 2%;text-align: left;}
 #namen{position:fixed;bottom:0;margin:0 2% 1% 2%;right:0;}
